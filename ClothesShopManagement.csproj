@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Clothes\AddClothes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Clothes\AddClothes.Designer.cs">
+      <DependentUpon>AddClothes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Clothes\ModifyClothes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Clothes\ModifyClothes.Designer.cs">
+      <DependentUpon>ModifyClothes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Clothes\ViewClothes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Clothes\ViewClothes.Designer.cs">
+      <DependentUpon>ViewClothes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Staff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
