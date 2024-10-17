@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClothesShopManagement
+namespace ClothesShopManagement.Product
 {
-    public partial class Form1 : Form
+    public partial class ModifyingProduct : Form
     {
-        public Form1()
+        public ModifyingProduct()
         {
             InitializeComponent();
         }

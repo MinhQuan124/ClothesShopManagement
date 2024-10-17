@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClothesShopManagement.Admin.Clothes
+namespace ClothesShopManagement.Staff
 {
-    public partial class AddClothes : Form
+    public partial class AddingStaff : Form
     {
-        public AddClothes()
+        public AddingStaff()
         {
             InitializeComponent();
         }
