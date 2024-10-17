@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +69,12 @@
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldProduct\ViewingOldProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldProduct\ViewingOldProduct.Designer.cs">
+      <DependentUpon>ViewingOldProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Product\AddingProduct.cs">
       <SubType>Form</SubType>
@@ -95,6 +113,12 @@
     </Compile>
     <Compile Include="Staff\ViewingStaff.Designer.cs">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ViewingStatictis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ViewingStatictis.Designer.cs">
+      <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
     <Compile Include="Warehouse\EnteringWarehouse.cs">
       <SubType>Form</SubType>
@@ -136,11 +160,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Bill\" />
-    <Folder Include="Customer\" />
-    <Folder Include="OldProduct\" />
-    <Folder Include="Statistics\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
