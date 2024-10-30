@@ -52,6 +52,13 @@
     <Compile Include="Bill\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Brand\ViewingBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brand\ViewingBrand.Designer.cs">
+      <DependentUpon>ViewingBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD_Data.cs" />
     <Compile Include="Customer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,17 +71,17 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportBill\AddingImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportBill\AddingImportBill.Designer.cs">
+      <DependentUpon>AddingImportBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OldProduct\ViewingOldProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OldProduct\ViewingOldProduct.Designer.cs">
-      <DependentUpon>ViewingOldProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Product\AddingProduct.cs">
       <SubType>Form</SubType>
@@ -120,11 +127,11 @@
     <Compile Include="Statistics\ViewingStatictis.Designer.cs">
       <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse\EnteringWarehouse.cs">
+    <Compile Include="Warehouse\ViewingWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Warehouse\EnteringWarehouse.Designer.cs">
-      <DependentUpon>EnteringWarehouse.cs</DependentUpon>
+    <Compile Include="Warehouse\ViewingWarehouse.Designer.cs">
+      <DependentUpon>ViewingWarehouse.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -143,6 +150,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Staff\ViewingStaff.resx">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
@@ -161,5 +169,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="images\LoginPic.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
