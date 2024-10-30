@@ -127,6 +127,7 @@
     <Compile Include="Statistics\ViewingStatictis.Designer.cs">
       <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
+    <Compile Include="StyleSet.cs" />
     <Compile Include="Warehouse\ViewingWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="images\IconSearch.png" />
     <Content Include="images\LoginPic.jpg" />
     <Content Include="images\textlogin.png" />
   </ItemGroup>
