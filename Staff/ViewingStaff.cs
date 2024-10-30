@@ -16,5 +16,13 @@ namespace ClothesShopManagement.Staff
         {
             InitializeComponent();
         }
+
+        private void ViewingStaff_Load(object sender, EventArgs e)
+        {
+            StyleSet.DataGridViewStyle(dgv_ViewStaff);
+
+
+            dgv_ViewStaff.DataSource = CRUD_Data.GetData("SELECT * FROM Staff");
+        }
     }
 }
