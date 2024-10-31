@@ -362,7 +362,11 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 <<<<<<< HEAD
+<<<<<<< HEAD
 /CRUD_Data.cs
+=======
+/LoginForm.cs
+>>>>>>> 67b910e3d14288ff89f549cf90c60f27d4e2e87d
 =======
 /LoginForm.cs
 >>>>>>> 67b910e3d14288ff89f549cf90c60f27d4e2e87d
