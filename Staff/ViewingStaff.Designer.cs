@@ -52,9 +52,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HideSelection = false;
             this.txtSearch.Location = new System.Drawing.Point(87, 80);
@@ -67,7 +67,8 @@
             // btn_AddStaff
             // 
             this.btn_AddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.btn_AddStaff.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddStaff.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddStaff.ForeColor = System.Drawing.Color.White;
             this.btn_AddStaff.Location = new System.Drawing.Point(927, 80);
             this.btn_AddStaff.Name = "btn_AddStaff";
@@ -80,7 +81,8 @@
             // btn_UpdateStaff
             // 
             this.btn_UpdateStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.btn_UpdateStaff.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UpdateStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UpdateStaff.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UpdateStaff.ForeColor = System.Drawing.Color.White;
             this.btn_UpdateStaff.Location = new System.Drawing.Point(927, 146);
             this.btn_UpdateStaff.Name = "btn_UpdateStaff";
@@ -93,7 +95,8 @@
             // btn_Delete
             // 
             this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.btn_Delete.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
             this.btn_Delete.Location = new System.Drawing.Point(927, 212);
             this.btn_Delete.Name = "btn_Delete";
@@ -106,7 +109,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, -2);
             this.label1.Name = "label1";
@@ -117,7 +120,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::ClothesShopManagement.Properties.Resources.IconSearch;
             this.pictureBox1.Location = new System.Drawing.Point(26, 80);

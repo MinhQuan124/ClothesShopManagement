@@ -68,5 +68,10 @@ namespace ClothesShopManagement.Staff
             cmbRole.SelectedIndex = -1;
             txtName.Focus();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
