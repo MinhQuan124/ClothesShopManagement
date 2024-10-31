@@ -19,6 +19,7 @@ namespace ClothesShopManagement
             InitializeComponent();
 
         }
+
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -73,5 +74,6 @@ namespace ClothesShopManagement
             return false;
         }
 
+>>>>>>> Stashed changes
     }
 }
