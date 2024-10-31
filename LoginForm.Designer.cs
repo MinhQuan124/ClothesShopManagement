@@ -40,21 +40,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ClothesShopManagement.Properties.Resources.LoginPic;
-            this.pictureBox1.Location = new System.Drawing.Point(314, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(419, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(648, 531);
+            this.pictureBox1.Size = new System.Drawing.Size(864, 654);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(80, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(107, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 55);
+            this.label1.Size = new System.Drawing.Size(201, 68);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOG IN";
             // 
@@ -62,10 +61,9 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(29, 159);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(39, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 32);
+            this.label2.Size = new System.Drawing.Size(201, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username";
             // 
@@ -73,10 +71,9 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(29, 263);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(39, 324);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 32);
+            this.label3.Size = new System.Drawing.Size(201, 39);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             // 
@@ -85,10 +82,10 @@
             this.txtUsername.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(34, 191);
+            this.txtUsername.Location = new System.Drawing.Point(45, 235);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(226, 38);
+            this.txtUsername.Size = new System.Drawing.Size(301, 46);
             this.txtUsername.TabIndex = 4;
             // 
             // txtPassword
@@ -96,11 +93,11 @@
             this.txtPassword.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(34, 295);
+            this.txtPassword.Location = new System.Drawing.Point(45, 363);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(226, 38);
+            this.txtPassword.Size = new System.Drawing.Size(301, 46);
             this.txtPassword.TabIndex = 5;
             // 
             // button1
@@ -108,9 +105,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(79, 388);
+            this.button1.Location = new System.Drawing.Point(107, 459);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 50);
+            this.button1.Size = new System.Drawing.Size(168, 62);
             this.button1.TabIndex = 6;
             this.button1.Text = "SIGN IN";
             this.button1.UseVisualStyleBackColor = false;
@@ -118,10 +116,10 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(962, 531);
+            this.ClientSize = new System.Drawing.Size(1283, 654);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -129,13 +127,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
