@@ -67,8 +67,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(237, 55);
             this.button2.TabIndex = 35;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_Save
             // 
@@ -78,8 +79,8 @@
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(237, 55);
             this.btn_Save.TabIndex = 34;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Text = "Lưu";
+            this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // cmbRole
@@ -247,6 +248,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ModifyingStaff";
             this.Text = "ModifyingStaff";
+            this.Load += new System.EventHandler(this.ModifyingStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

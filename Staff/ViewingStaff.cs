@@ -23,6 +23,15 @@ namespace ClothesShopManagement.Staff
             StyleSet.DataGridViewStyle(dgv_ViewStaff);
             string query = "SELECT * FROM Staff";
             dgv_ViewStaff.DataSource = CRUD_Data.GetData(query);
+            dgv_ViewStaff.Columns["StaffId"].HeaderText = "Mã nhân viên";
+            dgv_ViewStaff.Columns["Name"].HeaderText = " Họ Tên";
+            dgv_ViewStaff.Columns["PhoneNumber"].HeaderText = "Số điện thoại";
+            dgv_ViewStaff.Columns["Email"].HeaderText = "Email";
+            dgv_ViewStaff.Columns["Address"].HeaderText = "Địa chỉ";
+            dgv_ViewStaff.Columns["RoleId"].HeaderText = "Vai trò";
+            dgv_ViewStaff.Columns["Username"].HeaderText = "Tên đăng nhập";
+            dgv_ViewStaff.Columns["Password"].HeaderText = "Mật khẩu";
+
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)

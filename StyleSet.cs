@@ -24,8 +24,13 @@ namespace ClothesShopManagement
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft YaHei UI", 11, FontStyle.Bold);
-            dataGridView1.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 11);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 11);
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.ClearSelection();
+            dataGridView1.CurrentCell = null;
+            dataGridView1.ReadOnly = true;
         }
 
 
