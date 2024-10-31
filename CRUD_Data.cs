@@ -13,7 +13,7 @@ namespace ClothesShopManagement
         private static string sqlPath = "Data Source=LAPTOP-L8K1U12M\\QUANDOAN;Initial Catalog=ClothesShopManagement;Integrated Security=True";
         
         //Ham tra ve ket noi
-        private static SqlConnection Connection()
+        public static SqlConnection Connection()
         {
             return new SqlConnection(sqlPath);
         }

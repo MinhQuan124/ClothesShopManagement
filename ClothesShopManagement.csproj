@@ -140,6 +140,7 @@
     <Compile Include="Statistics\ViewingStatictis.Designer.cs">
       <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
+    <Compile Include="StyleSet.cs" />
     <Compile Include="Warehouse\ViewingWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,8 +156,12 @@
     <EmbeddedResource Include="Brand\ViewingBrand.resx">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bill\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -177,6 +182,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Staff\AddingStaff.resx">
+      <DependentUpon>AddingStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\ModifyingStaff.resx">
+      <DependentUpon>ModifyingStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff\ViewingStaff.resx">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +206,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="images\IconSearch.png" />
     <Content Include="images\LoginPic.jpg" />
     <Content Include="images\textlogin.png" />
   </ItemGroup>
