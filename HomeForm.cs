@@ -15,6 +15,7 @@ namespace ClothesShopManagement
         public HomeForm()
         {
             InitializeComponent();
+            
         }
 
         private void ShowFormInPanel(Form form)
@@ -34,7 +35,13 @@ namespace ClothesShopManagement
             ShowFormInPanel(new Product.ViewingProduct());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_ViewStaff_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new Staff.ViewingStaff());
         }
