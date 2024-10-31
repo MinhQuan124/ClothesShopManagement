@@ -30,9 +30,9 @@ namespace ClothesShopManagement
             string username = txtUsername.Text; 
             string password = txtPassword.Text; 
 
-            if (AuthenticateUser(username, password, out bool isAdmin))
+            if (AuthenticateUser(username, password, out bool isAdmin, out string usernameCurrently))
             {
-                HomeForm homeForm = new HomeForm(isAdmin);
+                HomeForm homeForm = new HomeForm(isAdmin, usernameCurrently);
                 homeForm.Show();
                 this.Hide();
             }
@@ -41,11 +41,12 @@ namespace ClothesShopManagement
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại.");
             }
         }
-        private bool AuthenticateUser(string username, string password, out bool isAdmin)
+        private bool AuthenticateUser(string username, string password, out bool isAdmin, out string usernameCurrently)
         {
             isAdmin = false;
-            string sql = "SELECT RoleId FROM Staff WHERE Username = @Username AND Password = @Password";
-            string sqlgetName = "SELECT Name FROM Staff WHERE Username = @Username AND Password = @Password";
+            usernameCurrently = string.Empty; // Khởi tạo biến cho tên
+            string sql = "SELECT RoleId, Name FROM Staff WHERE Username = @Username AND Password = @Password";
+
             try
             {
                 using (SqlConnection conn = CRUD_Data.Connection())
@@ -56,13 +57,15 @@ namespace ClothesShopManagement
                         cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@Password", password);
 
-                        var result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            int roleId = (int)result; 
-                            isAdmin = roleId == 0; 
-                            return true; 
+                            if (reader.Read())
+                            {
+                                int roleId = reader.GetInt32(0);
+                                usernameCurrently = reader.GetString(1);
+                                isAdmin = roleId == 0;
+                                return true;
+                            }
                         }
                     }
                 }
