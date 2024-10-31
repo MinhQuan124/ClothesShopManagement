@@ -20,8 +20,7 @@ namespace ClothesShopManagement
         private void ShowFormInPanel(Form form)
         {
             // Xóa nội dung hiện tại của Panel
-            PanelForm.Controls.Clear();
-
+            PanelForm.Controls.Clear();    
             // Thiết lập các thuộc tính của form con
             form.TopLevel = false;      // Không cho form con là TopLevel (form độc lập)
             form.Dock = DockStyle.Fill; // Cho phép form lấp đầy panel
@@ -31,12 +30,14 @@ namespace ClothesShopManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowFormInPanel(new Product.ViewingProduct());
+            ShowFormInPanel(new Brand.ViewingBrand());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new Staff.ViewingStaff());
         }
+
+       
     }
 }

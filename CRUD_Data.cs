@@ -10,8 +10,8 @@ namespace ClothesShopManagement
 {
     static class CRUD_Data
     {
-        private static string sqlPath = "Data Source=DINHQUAN1243\\SQLEXPRESS;Initial Catalog=ClothesShopManagement;User ID=sa;Password=***********;Trust Server Certificate=True";
-
+        private static string sqlPath = "Data Source=LAPTOP-L8K1U12M\\QUANDOAN;Initial Catalog=ClothesShopManagement;Integrated Security=True";
+        
         //Ham tra ve ket noi
         private static SqlConnection Connection()
         {
@@ -48,14 +48,49 @@ namespace ClothesShopManagement
             SqlConnection conn = Connection();
             conn.Open();
 
-            //Thuc hien cau lenh
+            
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
 
-            //dong ket noi
+           
             conn.Close();
-            //Huy cau lenh sql
+            
             cmd.Dispose();
+        }
+        public static int ExecuteNonQuery(string sql, SqlParameter[] parameters)
+        {
+            using (SqlConnection conn = Connection())
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+        public static DataTable GetDataWithParameter(string sql, SqlParameter parameter)
+        {
+            SqlConnection conn = Connection();
+            conn.Open();
+
+            // Create SqlCommand with parameter
+            SqlCommand command = new SqlCommand(sql, conn);
+            command.Parameters.Add(parameter);
+
+            SqlDataAdapter adapt = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapt.Fill(table);
+
+            conn.Close();
+            adapt.Dispose();
+
+            return table;
         }
     }
 }
