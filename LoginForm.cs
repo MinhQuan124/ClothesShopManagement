@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,13 @@ namespace ClothesShopManagement
 {
     public partial class LoginForm : Form
     {
+        public string usernameCurrently = "";
         public LoginForm()
         {
             InitializeComponent();
+
         }
+
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
@@ -41,7 +45,7 @@ namespace ClothesShopManagement
         {
             isAdmin = false;
             string sql = "SELECT RoleId FROM Staff WHERE Username = @Username AND Password = @Password";
-            
+            string sqlgetName = "SELECT Name FROM Staff WHERE Username = @Username AND Password = @Password";
             try
             {
                 using (SqlConnection conn = CRUD_Data.Connection())
@@ -70,5 +74,6 @@ namespace ClothesShopManagement
             return false;
         }
 
+>>>>>>> Stashed changes
     }
 }
