@@ -120,11 +120,11 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(483, 438);
+            this.button3.Location = new System.Drawing.Point(433, 430);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 43);
+            this.button3.Size = new System.Drawing.Size(185, 51);
             this.button3.TabIndex = 8;
             this.button3.Text = "Xác Nhận";
             this.button3.UseVisualStyleBackColor = false;
@@ -133,23 +133,25 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(702, 440);
+            this.button1.Location = new System.Drawing.Point(664, 430);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 41);
+            this.button1.Size = new System.Drawing.Size(185, 51);
             this.button1.TabIndex = 9;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-12, 0);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(-9, -1);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(940, 50);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Chỉnh Sủa Thương Hiệu";
+            this.label5.Text = "Chình thương hiệu";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EditBrand

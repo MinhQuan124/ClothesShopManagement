@@ -74,6 +74,5 @@ namespace ClothesShopManagement
             return false;
         }
 
->>>>>>> Stashed changes
     }
 }
