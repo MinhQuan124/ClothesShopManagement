@@ -22,7 +22,12 @@ namespace ClothesShopManagement.Brand
         {
             string sql = "SELECT Brand_Id, Name, Address, PhoneNumber FROM ClothesShopManagement.dbo.Brand";
             dataGridView1.DataSource = CRUD_Data.GetData(sql);
-            CustomizeDataGridView();
+            StyleSet.DataGridViewStyle(dataGridView1);
+            //CustomizeDataGridView();
+            dataGridView1.Columns["Brand_Id"].HeaderText = "Mã thương hiệu";
+            dataGridView1.Columns["Name"].HeaderText = "Tên thương hiệu";
+            dataGridView1.Columns["PhoneNumber"].HeaderText = "Số điện thoại";
+            dataGridView1.Columns["Address"].HeaderText = "Địa chỉ";
         }
 
         private void CustomizeDataGridView()
