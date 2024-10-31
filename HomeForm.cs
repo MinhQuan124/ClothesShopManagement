@@ -13,11 +13,14 @@ namespace ClothesShopManagement
     public partial class HomeForm : Form
     {
         private bool isAdmin;
-        public HomeForm(bool isAdmin)
+        public HomeForm(bool isAdmin, string usernameCurrently)
         {
             InitializeComponent();
             this.isAdmin = isAdmin;
             btnStaff.Visible = isAdmin;
+            label1.Text += usernameCurrently;
+
+            btnThoat.FlatAppearance.BorderSize = 0;
         }
 
         private void ShowFormInPanel(Form form)
@@ -72,6 +75,11 @@ namespace ClothesShopManagement
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
