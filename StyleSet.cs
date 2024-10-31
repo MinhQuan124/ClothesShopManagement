@@ -28,7 +28,9 @@ namespace ClothesShopManagement
             dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 11);
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;
+            dataGridView1.ReadOnly = true;
         }
 
 
