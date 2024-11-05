@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -58,21 +59,49 @@ namespace ClothesShopManagement.Staff
             int roleId = (int)cmbRole.SelectedValue;
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            // Kiểm tra dữ liệu hợp lệ
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(address) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
 
             if (StaffId > 0)
             {
                 // Truy vấn cập nhật nhân viên
-                string query = $"UPDATE Staff SET Name = N'{name}', PhoneNumber = '{phoneNumber}', " +
-                               $"Email = '{email}', Address = N'{address}', RoleId = {roleId}, " +
-                               $"Username = '{username}', Password = '{password}' " +
-                               $"WHERE StaffId = {StaffId}";
+                string query = "UPDATE Staff SET Name = @name, PhoneNumber = @phoneNumber, " +
+                               "Email = @email, Address = @address, RoleId = @roleId, " +
+                               "Username = @username, Password = @password " +
+                               "WHERE StaffId = @staffId";
 
-                CRUD_Data.GetData(query);
+                // Tạo mảng tham số
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                  new SqlParameter("@name", name),
+                  new SqlParameter("@phoneNumber", phoneNumber),
+                  new SqlParameter("@email", email),
+                  new SqlParameter("@address", address),
+                  new SqlParameter("@roleId", roleId),
+                  new SqlParameter("@username", username),
+                  new SqlParameter("@password", password),
+                  new SqlParameter("@staffId", StaffId)
+                };
 
-                // Kích hoạt sự kiện StaffUpdated để cập nhật DataGridView trên form chính
-                StaffUpdated?.Invoke();
-                MessageBox.Show("Đã cập nhật nhân viên thành công.");
+                // Gọi hàm ExecuteNonQuery với câu truy vấn và mảng tham số
+                int rowsAffected = CRUD_Data.ExecuteNonQuery(query, parameters);
 
+                // Kiểm tra kết quả
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Đã cập nhật nhân viên thành công.");
+                    // Kích hoạt sự kiện StaffUpdated để cập nhật DataGridView trên form chính
+                    StaffUpdated?.Invoke();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể cập nhật nhân viên.");
+                }
                 // Đóng form nếu sửa thành công
                 this.Close();
             }
@@ -80,7 +109,7 @@ namespace ClothesShopManagement.Staff
 
         private void ModifyingStaff_Load(object sender, EventArgs e)
         {
-
+            LoadStaffData(StaffId);
         }
 
         private void button2_Click(object sender, EventArgs e)
