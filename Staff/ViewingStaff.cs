@@ -64,7 +64,7 @@ namespace ClothesShopManagement.Staff
             AddingStaff addingStaff = new AddingStaff();
             addingStaff.StaffAdded += () =>
             {
-                dgv_ViewStaff.DataSource = CRUD_Data.GetData("SELECT * FROM Staff");
+                Load_Staff();
             };
 
             addingStaff.Show();
@@ -85,7 +85,7 @@ namespace ClothesShopManagement.Staff
                 // Đăng ký sự kiện để cập nhật lại DataGridView sau khi sửa
                 modifyForm.StaffUpdated += () =>
                 {
-                    dgv_ViewStaff.DataSource = CRUD_Data.GetData("SELECT * FROM Staff");
+                    Load_Staff();
                 };
 
                 modifyForm.ShowDialog(); // Hiển thị form sửa nhân viên
