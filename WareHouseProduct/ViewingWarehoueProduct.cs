@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,19 +32,20 @@ namespace ClothesShopManagement.WareHouseProduct
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int warehouseId = Convert.ToInt32(textBox1.Text.Trim()); // Assuming textBox1 contains the Warehouse_Id
+            int warehouseId = Convert.ToInt32(textBox1.Text.Trim());
 
             using (var addProductForm = new AddingWarehouseProduct(warehouseId))
             {
                 if (addProductForm.ShowDialog() == DialogResult.OK)
                 {
-                    load(); // Refresh the DataGridView after adding a product
+                    load(); 
                 }
             }
         }
         private void load()
         {
-            string sql = "SELECT WarehouseProduct_Id, Warehouse_Id, ProductId, Quantity FROM ClothesShopManagement.dbo.WarehouseProduct";
+            int ma = Convert.ToInt32(textBox1.Text);         
+            string sql = "SELECT WarehouseProduct_Id, Warehouse_Id, ProductId, Quantity FROM ClothesShopManagement.dbo.WarehouseProduct WHERE Warehouse_Id = '"+ma+"'";        
             dataGridView1.DataSource = CRUD_Data.GetData(sql);
         }
 
