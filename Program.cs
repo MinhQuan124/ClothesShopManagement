@@ -18,7 +18,7 @@ namespace ClothesShopManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewingWarehouse());
+            Application.Run(new HomeForm(true));
         }
     }
 }

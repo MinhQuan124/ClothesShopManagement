@@ -142,6 +142,12 @@
       <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
     <Compile Include="StyleSet.cs" />
+    <Compile Include="WareHouseProduct\ViewingWarehoueProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareHouseProduct\ViewingWarehoueProduct.Designer.cs">
+      <DependentUpon>ViewingWarehoueProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\AddingWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\ViewingStaff.resx">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareHouseProduct\ViewingWarehoueProduct.resx">
+      <DependentUpon>ViewingWarehoueProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\AddingWarehouse.resx">
       <DependentUpon>AddingWarehouse.cs</DependentUpon>

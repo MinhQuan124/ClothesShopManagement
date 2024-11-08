@@ -1,4 +1,5 @@
 ﻿using ClothesShopManagement.Brand;
+using ClothesShopManagement.WareHouseProduct;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,6 @@ namespace ClothesShopManagement.Warehouse
 
             if (string.IsNullOrEmpty(searchValue))
             {
-
                 LoadWareHouse();
             }
 
@@ -151,31 +151,17 @@ namespace ClothesShopManagement.Warehouse
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0)  // Kiểm tra nếu người dùng double-click vào một dòng hợp lệ
             {
-                // Get the selected row
+                // Lấy giá trị ID của nhà kho từ dòng đã chọn
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
+                string warehouseId = selectedRow.Cells["Warehouse_Id"].Value.ToString();
 
-                // Create a new Warehouse object with values from the selected row
-                var warehouse = new ModelClass.Warehouse
+                // Mở form DetailWarehouse và truyền ID nhà kho vào TextBox
+                using (var detailWarehouseForm = new ViewingWarehoueProduct())
                 {
-                    WarehouseId = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value), // Assuming Warehouse_Id is of type INT
-                    Name = selectedRow.Cells["Name"].Value.ToString(),
-                    Address = selectedRow.Cells["Address"].Value.ToString(),
-                    Phone = selectedRow.Cells["Phone"].Value.ToString(),
-                    Email = selectedRow.Cells["Email"].Value.ToString(),
-                    Stock = Convert.ToInt32(selectedRow.Cells["Stock"].Value) // Assuming Stock is of type INT
-                };
-
-                // Open the EditWarehouse form, passing the selected warehouse object
-                using (var editWarehouseForm = new EditingWarehouse(warehouse))
-                {
-                    // Show the form and check if the user clicked OK (saved the changes)
-                    if (editWarehouseForm.ShowDialog() == DialogResult.OK)
-                    {
-                        // Reload the data after editing the warehouse
-                        LoadWareHouse();
-                    }
+                    detailWarehouseForm.SetWarehouseId(warehouseId);  // Truyền ID nhà kho vào form chi tiết
+                    detailWarehouseForm.ShowDialog();  // Hiển thị form chi tiết
                 }
             }
         }
