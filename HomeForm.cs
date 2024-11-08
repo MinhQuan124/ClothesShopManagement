@@ -44,12 +44,12 @@ namespace ClothesShopManagement
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            ShowFormInPanel(new Customer.Form1());
+            ShowFormInPanel(new Customer.ViewCustomer());
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            ShowFormInPanel(new Bill.Form1());
+            ShowFormInPanel(new Bill.ViewingBill());
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
