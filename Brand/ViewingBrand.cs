@@ -127,7 +127,7 @@ namespace ClothesShopManagement.Brand
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Brand deleted successfully!");
-                        LoadBrandData(); // Refresh the DataGridView
+                        LoadBrandData();
                     }
                     else
                     {
@@ -143,10 +143,10 @@ namespace ClothesShopManagement.Brand
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Check if a row is selected
+           
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Get the selected row
+                
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var brand = new ModelClass.Brand
                 {

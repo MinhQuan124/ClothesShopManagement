@@ -96,6 +96,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelClass\Brand.cs" />
+    <Compile Include="ModelClass\Warehoue.cs" />
     <Compile Include="Product\AddingProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +142,18 @@
       <DependentUpon>ViewingStatictis.cs</DependentUpon>
     </Compile>
     <Compile Include="StyleSet.cs" />
+    <Compile Include="Warehouse\AddingWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\AddingWarehouse.Designer.cs">
+      <DependentUpon>AddingWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\EditingWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\EditingWarehouse.Designer.cs">
+      <DependentUpon>EditingWarehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\ViewingWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +203,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\ViewingStaff.resx">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\AddingWarehouse.resx">
+      <DependentUpon>AddingWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\EditingWarehouse.resx">
+      <DependentUpon>EditingWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\ViewingWarehouse.resx">
+      <DependentUpon>ViewingWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

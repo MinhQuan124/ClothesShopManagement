@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClothesShopManagement.Brand;
+using ClothesShopManagement.Warehouse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace ClothesShopManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new ViewingWarehouse());
         }
     }
 }
