@@ -17,7 +17,7 @@ namespace ClothesShopManagement
             {
                 row.Height = 30; 
             }
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -32,6 +32,7 @@ namespace ClothesShopManagement
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;
             dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
 
