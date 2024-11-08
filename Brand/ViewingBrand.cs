@@ -28,6 +28,8 @@ namespace ClothesShopManagement.Brand
             dataGridView1.Columns["Name"].HeaderText = "Tên thương hiệu";
             dataGridView1.Columns["PhoneNumber"].HeaderText = "Số điện thoại";
             dataGridView1.Columns["Address"].HeaderText = "Địa chỉ";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void CustomizeDataGridView()
