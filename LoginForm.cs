@@ -32,7 +32,7 @@ namespace ClothesShopManagement
 
             if (AuthenticateUser(username, password, out bool isAdmin))
             {
-                HomeForm homeForm = new HomeForm(isAdmin);
+                HomeForm homeForm = new HomeForm(isAdmin,"quan");
                 homeForm.Show();
                 this.Hide();
             }

@@ -21,7 +21,7 @@ namespace ClothesShopManagement.Warehouse
         }
         private void LoadWareHouse()
         {
-            string sql = "SELECT Warehouse_Id, Name, Address, Phone, Email, Stock FROM ClothesShopManagement.dbo.Warehouse";
+            string sql = "SELECT Warehouse_Id, Name, Address, Phone, Email,Stock FROM ClothesShopManagement.dbo.Warehouse";
             dataGridView1.DataSource = CRUD_Data.GetData(sql);
             StyleSet.DataGridViewStyle(dataGridView1);
 
@@ -33,7 +33,7 @@ namespace ClothesShopManagement.Warehouse
             dataGridView1.Columns["Phone"].HeaderText = "Số điện thoại";
             dataGridView1.Columns["Address"].HeaderText = "Địa chỉ";
             dataGridView1.Columns["Email"].HeaderText = "Email";
-            dataGridView1.Columns["Stock"].HeaderText = "Số lượng";
+          
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void ViewingWarehouse_Load(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace ClothesShopManagement.Warehouse
             {
                 // Lấy giá trị ID của nhà kho từ dòng đã chọn
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
-                string warehouseId = selectedRow.Cells["Warehouse_Id"].Value.ToString();
+                int warehouseId = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value.ToString());
 
                 // Mở form DetailWarehouse và truyền ID nhà kho vào TextBox
                 using (var detailWarehouseForm = new ViewingWarehoueProduct())
