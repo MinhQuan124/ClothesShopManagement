@@ -10,8 +10,8 @@ namespace ClothesShopManagement
 {
     static class CRUD_Data
     {
-        private static string sqlPath = "Data Source=LAPTOP-L8K1U12M\\QUANDOAN;Initial Catalog=ClothesShopManagement;Integrated Security=True";
-        
+        private static string sqlPath = "Data Source=DINHQUAN1243\\SQLEXPRESS;Initial Catalog=ClothesShopManagement;Integrated Security=True";
+
         //Ham tra ve ket noi
         public static SqlConnection Connection()
         {
@@ -24,7 +24,7 @@ namespace ClothesShopManagement
             // Mo chuoi ket noi
             SqlConnection conn = Connection();
             conn.Open();
-             
+
             // tao doi tuong adapter de adapt du lieu
             SqlDataAdapter adapt = new SqlDataAdapter(sql, conn);
 
@@ -48,32 +48,17 @@ namespace ClothesShopManagement
             SqlConnection conn = Connection();
             conn.Open();
 
-            
+            //Thuc hien cau lenh
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
 
-           
+            //dong ket noi
             conn.Close();
-            
+            //Huy cau lenh sql
             cmd.Dispose();
         }
-        public static int ExecuteNonQuery(string sql, SqlParameter[] parameters)
-        {
-            using (SqlConnection conn = Connection())
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(sql, conn))
-                {
-                    if (parameters != null)
-                    {
-                        command.Parameters.AddRange(parameters);
-                    }
 
-                    
-                    return command.ExecuteNonQuery();
-                }
-            }
-        }
+        //Phuong thuc do data vao datatable (cach 2)
         public static DataTable GetDataWithParameter(string sql, SqlParameter parameter)
         {
             SqlConnection conn = Connection();
@@ -91,6 +76,24 @@ namespace ClothesShopManagement
             adapt.Dispose();
 
             return table;
+        }
+
+        public static int ExecuteNonQuery(string sql, SqlParameter[] parameters)
+        {
+            using (SqlConnection conn = Connection())
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+
+                    return command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill\Form1.cs">
+    <Compile Include="Bill\ViewingBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bill\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Bill\ViewingBill.Designer.cs">
+      <DependentUpon>ViewingBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Brand\AddingBrand.cs">
       <SubType>Form</SubType>
@@ -70,12 +70,24 @@
     <Compile Include="Brand\ViewingBrand.Designer.cs">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="CRUD_Data.cs" />
-    <Compile Include="Customer\Form1.cs">
+    <Compile Include="CRUD_Date.cs" />
+    <Compile Include="Customer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Customer\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -89,6 +101,24 @@
     <Compile Include="ImportBill\AddingImportBill.Designer.cs">
       <DependentUpon>AddingImportBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportBill\EditingImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportBill\EditingImportBill.Designer.cs">
+      <DependentUpon>EditingImportBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportBill\ViewingImportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportBill\ViewingImportBill.Designer.cs">
+      <DependentUpon>ViewingImportBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportBill\ViewingImportBillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportBill\ViewingImportBillDetail.Designer.cs">
+      <DependentUpon>ViewingImportBillDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +126,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelClass\Brand.cs" />
-    <Compile Include="ModelClass\Warehoue.cs" />
+    <Compile Include="ModelClass\Product.cs" />
     <Compile Include="Product\AddingProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,18 +211,42 @@
     <EmbeddedResource Include="Brand\ViewingBrand.resx">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bill\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Bill\ViewingBill.resx">
+      <DependentUpon>ViewingBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportBill\AddingImportBill.resx">
+      <DependentUpon>AddingImportBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportBill\EditingImportBill.resx">
+      <DependentUpon>EditingImportBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportBill\ViewingImportBill.resx">
+      <DependentUpon>ViewingImportBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportBill\ViewingImportBillDetail.resx">
+      <DependentUpon>ViewingImportBillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product\AddingProduct.resx">
       <DependentUpon>AddingProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ModifyingProduct.resx">
+      <DependentUpon>ModifyingProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product\ViewingProduct.resx">
       <DependentUpon>ViewingProduct.cs</DependentUpon>

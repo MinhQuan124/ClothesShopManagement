@@ -52,14 +52,19 @@ namespace ClothesShopManagement.Brand
             int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Brand updated successfully!");
+                MessageBox.Show("Cập nhật thành công!");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Error updating brand. Please try again.");
+                MessageBox.Show("Lỗi. Vui lòng thử lại");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
