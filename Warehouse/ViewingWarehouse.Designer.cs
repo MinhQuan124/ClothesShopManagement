@@ -46,7 +46,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(940, 50);
+            this.label2.Size = new System.Drawing.Size(1178, 50);
             this.label2.TabIndex = 16;
             this.label2.Text = "Danh sách nhà kho";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,7 +56,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(702, 218);
+            this.button4.Location = new System.Drawing.Point(897, 230);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 55);
             this.button4.TabIndex = 15;
@@ -69,7 +69,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(273, 151);
+            this.button1.Location = new System.Drawing.Point(286, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 39);
             this.button1.TabIndex = 14;
@@ -80,11 +80,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 324);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 324);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(940, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(1110, 335);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -94,7 +94,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(702, 68);
+            this.button3.Location = new System.Drawing.Point(897, 80);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 54);
             this.button3.TabIndex = 12;
@@ -107,7 +107,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(702, 141);
+            this.button2.Location = new System.Drawing.Point(897, 153);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 58);
             this.button2.TabIndex = 11;
@@ -118,7 +118,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(148, 82);
+            this.textBox1.Location = new System.Drawing.Point(161, 95);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(242, 33);
@@ -128,7 +128,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 99);
+            this.label1.Location = new System.Drawing.Point(48, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 22);
             this.label1.TabIndex = 9;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 661);
+            this.ClientSize = new System.Drawing.Size(1190, 950);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);

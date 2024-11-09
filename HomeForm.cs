@@ -23,7 +23,7 @@ namespace ClothesShopManagement
             btnThoat.FlatAppearance.BorderSize = 0;
         }
 
-        private void ShowFormInPanel(Form form)
+        public void ShowFormInPanel(Form form)
         {
             // Xóa nội dung hiện tại của Panel
             PanelForm.Controls.Clear();    

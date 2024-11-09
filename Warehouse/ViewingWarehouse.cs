@@ -15,10 +15,13 @@ namespace ClothesShopManagement.Warehouse
 {
     public partial class ViewingWarehouse : Form
     {
+        
         public ViewingWarehouse()
         {
+            
             InitializeComponent();
         }
+        
         private void LoadWareHouse()
         {
             string sql = "SELECT Warehouse_Id, Name, Address, Phone, Email,Stock FROM ClothesShopManagement.dbo.Warehouse";
