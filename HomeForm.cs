@@ -37,7 +37,7 @@ namespace ClothesShopManagement
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-
+            ShowFormInPanel(new Product.ViewingProduct());
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
