@@ -98,7 +98,7 @@
             // 
             this.dgv_ViewImportBill.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ViewImportBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ViewImportBill.Location = new System.Drawing.Point(12, 337);
+            this.dgv_ViewImportBill.Location = new System.Drawing.Point(12, 393);
             this.dgv_ViewImportBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_ViewImportBill.Name = "dgv_ViewImportBill";
             this.dgv_ViewImportBill.RowHeadersWidth = 74;
@@ -111,7 +111,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 751);
+            this.label2.Location = new System.Drawing.Point(8, 807);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(290, 20);
             this.label2.TabIndex = 13;

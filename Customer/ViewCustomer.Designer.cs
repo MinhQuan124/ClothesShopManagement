@@ -49,7 +49,7 @@
             this.btn_DeleteCus.Location = new System.Drawing.Point(648, 201);
             this.btn_DeleteCus.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DeleteCus.Name = "btn_DeleteCus";
-            this.btn_DeleteCus.Size = new System.Drawing.Size(210, 39);
+            this.btn_DeleteCus.Size = new System.Drawing.Size(210, 49);
             this.btn_DeleteCus.TabIndex = 9;
             this.btn_DeleteCus.Text = "Xóa";
             this.btn_DeleteCus.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.btn_UpdateCus.Location = new System.Drawing.Point(648, 137);
             this.btn_UpdateCus.Margin = new System.Windows.Forms.Padding(2);
             this.btn_UpdateCus.Name = "btn_UpdateCus";
-            this.btn_UpdateCus.Size = new System.Drawing.Size(210, 39);
+            this.btn_UpdateCus.Size = new System.Drawing.Size(210, 49);
             this.btn_UpdateCus.TabIndex = 8;
             this.btn_UpdateCus.Text = "Sửa";
             this.btn_UpdateCus.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.btn_AddCus.Location = new System.Drawing.Point(648, 75);
             this.btn_AddCus.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddCus.Name = "btn_AddCus";
-            this.btn_AddCus.Size = new System.Drawing.Size(210, 39);
+            this.btn_AddCus.Size = new System.Drawing.Size(210, 49);
             this.btn_AddCus.TabIndex = 7;
             this.btn_AddCus.Text = "Thêm";
             this.btn_AddCus.UseVisualStyleBackColor = false;
@@ -103,7 +103,7 @@
             // 
             this.dgv_ViewCus.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ViewCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ViewCus.Location = new System.Drawing.Point(9, 370);
+            this.dgv_ViewCus.Location = new System.Drawing.Point(8, 331);
             this.dgv_ViewCus.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_ViewCus.Name = "dgv_ViewCus";
             this.dgv_ViewCus.RowHeadersWidth = 74;
@@ -134,7 +134,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(904, 41);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Danh sách nhân viên";
+            this.label1.Text = "Danh sách khách hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Search
@@ -154,8 +154,9 @@
             // 
             // ViewCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(893, 772);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.pictureBox1);

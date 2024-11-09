@@ -41,10 +41,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-7, -2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(-9, -2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(904, 41);
+            this.label1.Size = new System.Drawing.Size(1205, 50);
             this.label1.TabIndex = 15;
             this.label1.Text = "Hóa đơn bán";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,10 +54,10 @@
             this.btn_DeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeleteBill.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteBill.ForeColor = System.Drawing.Color.White;
-            this.btn_DeleteBill.Location = new System.Drawing.Point(569, 240);
-            this.btn_DeleteBill.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_DeleteBill.Location = new System.Drawing.Point(759, 244);
+            this.btn_DeleteBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_DeleteBill.Name = "btn_DeleteBill";
-            this.btn_DeleteBill.Size = new System.Drawing.Size(289, 39);
+            this.btn_DeleteBill.Size = new System.Drawing.Size(385, 48);
             this.btn_DeleteBill.TabIndex = 14;
             this.btn_DeleteBill.Text = "Xóa Hóa đơn bán";
             this.btn_DeleteBill.UseVisualStyleBackColor = false;
@@ -70,10 +69,10 @@
             this.btn_UpdateBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UpdateBill.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UpdateBill.ForeColor = System.Drawing.Color.White;
-            this.btn_UpdateBill.Location = new System.Drawing.Point(569, 161);
-            this.btn_UpdateBill.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_UpdateBill.Location = new System.Drawing.Point(759, 173);
+            this.btn_UpdateBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_UpdateBill.Name = "btn_UpdateBill";
-            this.btn_UpdateBill.Size = new System.Drawing.Size(289, 39);
+            this.btn_UpdateBill.Size = new System.Drawing.Size(385, 48);
             this.btn_UpdateBill.TabIndex = 13;
             this.btn_UpdateBill.Text = "Sửa Hóa đơn bán";
             this.btn_UpdateBill.UseVisualStyleBackColor = false;
@@ -84,10 +83,10 @@
             this.btn_AddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddBill.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddBill.ForeColor = System.Drawing.Color.White;
-            this.btn_AddBill.Location = new System.Drawing.Point(569, 83);
-            this.btn_AddBill.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AddBill.Location = new System.Drawing.Point(759, 102);
+            this.btn_AddBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddBill.Name = "btn_AddBill";
-            this.btn_AddBill.Size = new System.Drawing.Size(289, 39);
+            this.btn_AddBill.Size = new System.Drawing.Size(385, 48);
             this.btn_AddBill.TabIndex = 12;
             this.btn_AddBill.Text = "Thêm Hóa đơn bán";
             this.btn_AddBill.UseVisualStyleBackColor = false;
@@ -96,25 +95,28 @@
             // 
             this.dgv_Bill.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Bill.Location = new System.Drawing.Point(9, 409);
-            this.dgv_Bill.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Bill.Location = new System.Drawing.Point(12, 422);
+            this.dgv_Bill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Bill.Name = "dgv_Bill";
             this.dgv_Bill.RowHeadersWidth = 74;
             this.dgv_Bill.RowTemplate.Height = 31;
-            this.dgv_Bill.Size = new System.Drawing.Size(874, 327);
+            this.dgv_Bill.Size = new System.Drawing.Size(1165, 402);
             this.dgv_Bill.TabIndex = 11;
             // 
             // ViewingBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 772);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1191, 950);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_DeleteBill);
             this.Controls.Add(this.btn_UpdateBill);
             this.Controls.Add(this.btn_AddBill);
             this.Controls.Add(this.dgv_Bill);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewingBill";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ViewingBill_Load);
