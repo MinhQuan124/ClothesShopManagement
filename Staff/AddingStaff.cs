@@ -26,10 +26,6 @@ namespace ClothesShopManagement.Staff
             cmbRole.DisplayMember = "Name"; 
             cmbRole.ValueMember = "RoleId";    
         }
-        private void AddingStaff_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {

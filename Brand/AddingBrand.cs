@@ -9,8 +9,8 @@ namespace ClothesShopManagement.Brand
         public AddingBrand()
         {
             InitializeComponent();
-            textBox1.ReadOnly = true; // Make the Brand_Id textbox read-only
-            textBox1.Enabled = false; // Alternatively, disable the textbox completely
+            textBox1.ReadOnly = true;
+            textBox1.Enabled = false; 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -35,14 +35,19 @@ namespace ClothesShopManagement.Brand
             int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Brand added successfully!");
+                MessageBox.Show("Thêm thương hiệu thành công!");
                 this.DialogResult = DialogResult.OK; // Set the dialog result to OK
                 this.Close(); // Close the form
             }
             else
             {
-                MessageBox.Show("Error adding brand. Please try again.");
+                MessageBox.Show("Lỗi. Vui lòng thử lại.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

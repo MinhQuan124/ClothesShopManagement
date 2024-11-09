@@ -35,11 +35,9 @@ namespace ClothesShopManagement
            
         }
 
-
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnProducts_Click(object sender, EventArgs e)
         {
-            ShowFormInPanel(new Brand.ViewingBrand());
+
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -61,20 +59,13 @@ namespace ClothesShopManagement
         {
             ShowFormInPanel(new Warehouse.ViewingWarehouse());
         }
-
+        private void btnImportBill_Click(object sender, EventArgs e)
+        {
+            ShowFormInPanel(new ImportBill.ViewingImportBill());
+        }
         private void btnStaff_Click(object sender, EventArgs e)
         {
             ShowFormInPanel(new Staff.ViewingStaff());
-        }
-
-        private void HomeForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

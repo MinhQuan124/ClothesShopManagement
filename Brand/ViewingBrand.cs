@@ -114,7 +114,7 @@ namespace ClothesShopManagement.Brand
                 string brandId = selectedRow.Cells["Brand_Id"].Value.ToString();
 
                 // Confirm deletion
-                DialogResult confirmResult = MessageBox.Show($"Are you sure you want to delete brand {brandId}?", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa thương hiệu {brandId}?", "Xác nhận xóa", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
                     // SQL query to delete the selected brand from the database
@@ -128,18 +128,18 @@ namespace ClothesShopManagement.Brand
                     int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Brand deleted successfully!");
+                        MessageBox.Show("Xóa thương hiệu thành công");
                         LoadBrandData(); // Refresh the DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("Error deleting brand. Please try again.");
+                        MessageBox.Show("Lỗi. Vui lòng thử lại");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please select a brand to delete.");
+                MessageBox.Show("Vui lòng chọn thương hiệu muốn xóa");
             }
         }
 
@@ -169,7 +169,7 @@ namespace ClothesShopManagement.Brand
             }
             else
             {
-                MessageBox.Show("Please select a brand to edit.");
+                MessageBox.Show("Vui lòng chọn thương hiệu để chỉnh sửa.");
             }
         }
     }
