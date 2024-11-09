@@ -54,7 +54,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(-2, -2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(1239, 62);
+            this.label9.Size = new System.Drawing.Size(1244, 62);
             this.label9.TabIndex = 36;
             this.label9.Text = "Thay đổi thông tin";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +68,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(267, 77);
-            this.button2.TabIndex = 35;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -83,7 +83,7 @@
             this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(267, 77);
-            this.btn_Save.TabIndex = 34;
+            this.btn_Save.TabIndex = 7;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -96,7 +96,7 @@
             this.cmbRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(391, 40);
-            this.cmbRole.TabIndex = 33;
+            this.cmbRole.TabIndex = 4;
             // 
             // label7
             // 
@@ -126,7 +126,7 @@
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(396, 60);
-            this.txtPassword.TabIndex = 30;
+            this.txtPassword.TabIndex = 6;
             // 
             // label5
             // 
@@ -146,7 +146,7 @@
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(396, 60);
-            this.txtUsername.TabIndex = 28;
+            this.txtUsername.TabIndex = 4;
             // 
             // label4
             // 
@@ -166,7 +166,7 @@
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(396, 60);
-            this.txtPhoneNumber.TabIndex = 26;
+            this.txtPhoneNumber.TabIndex = 1;
             // 
             // label3
             // 
@@ -186,7 +186,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(396, 60);
-            this.txtAddress.TabIndex = 24;
+            this.txtAddress.TabIndex = 3;
             // 
             // label2
             // 
@@ -206,7 +206,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(396, 60);
-            this.txtEmail.TabIndex = 22;
+            this.txtEmail.TabIndex = 2;
             // 
             // label1
             // 
@@ -226,7 +226,7 @@
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(396, 60);
-            this.txtName.TabIndex = 20;
+            this.txtName.TabIndex = 0;
             // 
             // ModifyingStaff
             // 

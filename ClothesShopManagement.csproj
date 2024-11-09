@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill\Form1.cs">
+    <Compile Include="Bill\ViewingBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bill\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Bill\ViewingBill.Designer.cs">
+      <DependentUpon>ViewingBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Brand\AddingBrand.cs">
       <SubType>Form</SubType>
@@ -70,12 +70,24 @@
     <Compile Include="Brand\ViewingBrand.Designer.cs">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="CRUD_Data.cs" />
-    <Compile Include="Customer\Form1.cs">
+    <Compile Include="CRUD_Date.cs" />
+    <Compile Include="Customer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Customer\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -175,8 +187,17 @@
     <EmbeddedResource Include="Brand\ViewingBrand.resx">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bill\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Bill\ViewingBill.resx">
+      <DependentUpon>ViewingBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

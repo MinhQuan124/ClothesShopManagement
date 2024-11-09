@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,12 +48,38 @@ namespace ClothesShopManagement.Staff
             }
 
             // Thực hiện lệnh SQL để thêm dữ liệu vào bảng Staff
-            string query = $"INSERT INTO Staff (Name, PhoneNumber, Email, Address, RoleId, Username, Password) " +
-                           $"VALUES (N'{name}', '{phoneNumber}', '{email}', N'{address}', {roleId}, '{username}', '{password}')";
-            CRUD_Data.GetData(query);
+            string query = "INSERT INTO Staff (Name, PhoneNumber, Email, Address, RoleId, Username, Password) " +
+               "VALUES (@name, @phoneNumber, @email, @address, @roleId, @username, @password)";
 
-            // Kích hoạt sự kiện StaffAdded để cập nhật DataGridView trên form chính
-            StaffAdded?.Invoke();
+            // Tạo mảng tham số
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+              new SqlParameter("@name", name),
+              new SqlParameter("@phoneNumber", phoneNumber),
+              new SqlParameter("@email", email),
+              new SqlParameter("@address", address),
+              new SqlParameter("@roleId", roleId),
+              new SqlParameter("@username", username),
+              new SqlParameter("@password", password)
+            };
+
+            // Gọi hàm ExecuteNonQuery với câu truy vấn và mảng tham số
+            int rowsAffected = CRUD_Data.ExecuteNonQuery(query, parameters);
+
+            // Kiểm tra kết quả (có thể hiển thị thông báo nếu cần)
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Đã thêm nhân viên thành công.");
+                // Kích hoạt sự kiện StaffAdded để cập nhật DataGridView trên form chính
+                StaffAdded?.Invoke();
+
+            }
+            else
+            {
+                MessageBox.Show("Không thể thêm nhân viên.");
+            };
+
+            
 
             // Xóa các trường nhập liệu để chuẩn bị cho lần nhập tiếp theo
             txtName.Clear();

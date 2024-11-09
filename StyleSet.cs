@@ -32,6 +32,7 @@ namespace ClothesShopManagement
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell = null;
             dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
 
