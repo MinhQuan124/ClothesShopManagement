@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill\AddingBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill\AddingBill.Designer.cs">
+      <DependentUpon>AddingBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\EditBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill\EditBill.Designer.cs">
+      <DependentUpon>EditBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bill\ViewingBill.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bill\ViewingBill.Designer.cs">
       <DependentUpon>ViewingBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill\ViewingBillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill\ViewingBillDetail.Designer.cs">
+      <DependentUpon>ViewingBillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Brand\AddingBrand.cs">
       <SubType>Form</SubType>
@@ -203,6 +221,15 @@
     <Compile Include="Warehouse\ViewingWarehouse.Designer.cs">
       <DependentUpon>ViewingWarehouse.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bill\AddingBill.resx">
+      <DependentUpon>AddingBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill\EditBill.resx">
+      <DependentUpon>EditBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill\ViewingBillDetail.resx">
+      <DependentUpon>ViewingBillDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Brand\AddingBrand.resx">
       <DependentUpon>AddingBrand.cs</DependentUpon>
     </EmbeddedResource>

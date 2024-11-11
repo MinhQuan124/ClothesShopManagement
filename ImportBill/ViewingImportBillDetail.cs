@@ -37,7 +37,6 @@ namespace ClothesShopManagement.ImportBill
             dgvImportedProduct.Columns["Price"].HeaderText = "Đơn giá";
             dgvImportedProduct.Columns["Material"].HeaderText = "Chất liệu";
             dgvImportedProduct.Columns["Quantity"].HeaderText = "Số lượng";
-
             dgvImportedProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
