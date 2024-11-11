@@ -79,5 +79,10 @@ namespace ClothesShopManagement.Warehouse
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

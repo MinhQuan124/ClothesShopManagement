@@ -62,19 +62,20 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(680, 546);
+            this.button1.Location = new System.Drawing.Point(697, 546);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 51);
             this.button1.TabIndex = 30;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(436, 546);
+            this.button3.Location = new System.Drawing.Point(506, 546);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 51);
             this.button3.TabIndex = 29;
@@ -169,11 +170,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(815, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 238);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -207,7 +208,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AddingWarehouseProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddingWarehouseProduct";
+            this.Text = "Nhập quần áo vào kho";
             this.Load += new System.EventHandler(this.AddingWarehouseProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

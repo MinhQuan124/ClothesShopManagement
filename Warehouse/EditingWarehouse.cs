@@ -66,8 +66,13 @@ namespace ClothesShopManagement.Warehouse
             }
             else
             {
-                MessageBox.Show("Error updating warehouse. Please try again.");
+                MessageBox.Show("Sửa thông tin nhà kho không thành công. Vui lòng thử lại");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

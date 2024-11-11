@@ -22,7 +22,6 @@ namespace ClothesShopManagement.WareHouseProduct
             InitializeComponent();
             WarehouseId = warehouseId;
 
-
             LoadProductDataToComboBox();
 
         }
@@ -71,7 +70,7 @@ namespace ClothesShopManagement.WareHouseProduct
                 else
                 {
                     comboBox2.DataSource = null;
-                    MessageBox.Show("No products found for this Import Bill.");
+                    MessageBox.Show("Không tìm thấy sản phẩm trong hóa đơn nhập.");
                 }
             }
         }
@@ -143,7 +142,7 @@ WHERE ProductId IN (
                     // Kiểm tra nếu tổng số lượng sản phẩm trong bill vượt quá tồn kho của kho hiện tại
                     if (totalQuantityInBill > availableStock)
                     {
-                        MessageBox.Show("Không thể thêm hóa đơn nhập này vào Warehouse. Tổng số lượng sản phẩm vượt quá tồn kho hiện tại.");
+                        MessageBox.Show("Không thể thêm hóa đơn nhập này vào kho. Tổng số lượng sản phẩm vượt quá sức chứa hiện tại.");
                     }
                     else
                     {
@@ -172,7 +171,7 @@ WHERE ProductId IN (
                                 this.DialogResult = DialogResult.OK;
                                 this.Close();
 
-                                MessageBox.Show($"ProductId {productId} đã được thêm vào Warehouse {WarehouseId}.");
+                                MessageBox.Show($"Quần áo có mã {productId} đã được thêm vào Kho {WarehouseId}.");
                             }
                         }
                     }
@@ -256,14 +255,7 @@ WHERE ProductId IN (
                     textBox2.Clear();
                     MessageBox.Show("Không tìm thấy chi tiết sản phẩm.");
                 }
-
-
-
-
-
             }
-
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -292,6 +284,11 @@ WHERE ProductId IN (
                     comboBox2.Text = selectedRow.Cells["ProductId"].Value.ToString();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -68,6 +68,7 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -224,7 +225,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddingWarehouse";
-            this.Text = "AddingWarehouse";
+            this.Text = "Thêm nhà kho mới";
             this.ResumeLayout(false);
             this.PerformLayout();
 

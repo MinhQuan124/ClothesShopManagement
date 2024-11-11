@@ -94,7 +94,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(940, 50);
             this.label5.TabIndex = 46;
-            this.label5.Text = "Thêm Nhà Kho";
+            this.label5.Text = "Sửa Thông Tin Nhà Kho";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
@@ -108,6 +108,7 @@
             this.button1.TabIndex = 45;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -224,7 +225,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EditingWarehouse";
-            this.Text = "EditingWarehouse";
+            this.Text = "Sửa thông tin nhà kho";
             this.ResumeLayout(false);
             this.PerformLayout();
 
