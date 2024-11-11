@@ -24,14 +24,11 @@ namespace ClothesShopManagement.WareHouseProduct
             InitializeComponent();
             hp = formA; 
         }
-
-
         public void SetWarehouseId(int warehouseId)
         {
             textBox1.Text = warehouseId.ToString();
             load();
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,7 +50,6 @@ namespace ClothesShopManagement.WareHouseProduct
                 }
             }
         }
-     
         private void load()
         {
             int ma = Convert.ToInt32(textBox1.Text);  // Get the WarehouseId from textBox1

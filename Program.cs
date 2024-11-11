@@ -17,7 +17,7 @@ namespace ClothesShopManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(true,"quan"));
+            Application.Run(new HomeForm(true, "quan"));
         }
     }
 }

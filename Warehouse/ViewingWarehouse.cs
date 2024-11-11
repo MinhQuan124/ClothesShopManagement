@@ -43,16 +43,7 @@ namespace ClothesShopManagement.Warehouse
         private void ViewingWarehouse_Load(object sender, EventArgs e)
         {
             LoadWareHouse();
-          
-
-                
-
             }
-
-       
-
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             using (AddingWarehouse addBrandForm = new AddingWarehouse())
@@ -67,10 +58,8 @@ namespace ClothesShopManagement.Warehouse
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string searchValue = textBox1.Text.Trim();
@@ -79,7 +68,6 @@ namespace ClothesShopManagement.Warehouse
             {
                 LoadWareHouse();
             }
-
             else
             {
                 string sql = "SELECT Warehouse_Id, Name, Address, Phone, Email, Stock FROM ClothesShopManagement.dbo.Warehouse WHERE Name LIKE @searchValue";
@@ -100,7 +88,7 @@ namespace ClothesShopManagement.Warehouse
                 int warehouseId = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value.ToString());
 
                 // Confirm deletion
-                DialogResult confirmResult = MessageBox.Show($"Are you sure you want to delete warehouse {warehouseId}?", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa nhà kho {warehouseId}?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
                     // SQL query to delete the selected warehouse from the database
@@ -114,18 +102,18 @@ namespace ClothesShopManagement.Warehouse
                     int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Warehouse deleted successfully!");
+                        MessageBox.Show("Xóa nhà kho thành công!");
                         LoadWareHouse(); // Refresh the data in DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("Error deleting warehouse. Please try again.");
+                        MessageBox.Show("Lỗi xóa nhà kho. Vui lòng thử lại");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please select a warehouse to delete.");
+                MessageBox.Show("Vui lòng chọn nhà kho để xóa.");
             }
 
         }
@@ -157,7 +145,7 @@ namespace ClothesShopManagement.Warehouse
             }
             else
             {
-                MessageBox.Show("Please select a warehouse to edit.");
+                MessageBox.Show("Vui lòng chọn nhà kho để sửa.");
             }
 
         }
