@@ -10,7 +10,7 @@ namespace ClothesShopManagement
 {
     static class CRUD_Data
     {
-        private static string sqlPath = "Data Source=DINHQUAN1243\\SQLEXPRESS;Initial Catalog=ClothesShopManagement;Integrated Security=True";
+        private static string sqlPath = "Data Source=LAPTOP-L8K1U12M\\QUANDOAN;Initial Catalog=ClothesShopManagement;Integrated Security=True";
 
         //Ham tra ve ket noi
         public static SqlConnection Connection()
@@ -89,11 +89,52 @@ namespace ClothesShopManagement
                     {
                         command.Parameters.AddRange(parameters);
                     }
-
-
                     return command.ExecuteNonQuery();
                 }
             }
+
         }
+        public static DataTable GetDataWithParameter(string query, SqlParameter[] parameters)
+        {
+            // Tạo đối tượng kết nối
+            using (SqlConnection conn = new SqlConnection(sqlPath))
+            {
+                // Tạo đối tượng SqlCommand và chỉ định câu truy vấn và kết nối
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                // Thêm các tham số vào câu lệnh SQL
+                if (parameters != null)
+                {
+                    cmd.Parameters.AddRange(parameters);
+                }
+
+                // Tạo một đối tượng DataAdapter để thực thi câu lệnh và nạp dữ liệu vào DataTable
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();             
+                conn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+           
+        public static object ExecuteScalar(string sql, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection conn = Connection())
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    return command.ExecuteScalar();
+                }
+            }
+        }
+       
+
+
     }
 }

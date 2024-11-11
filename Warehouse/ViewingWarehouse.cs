@@ -1,4 +1,5 @@
 ﻿using ClothesShopManagement.Brand;
+using ClothesShopManagement.ModelClass;
 using ClothesShopManagement.WareHouseProduct;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace ClothesShopManagement.Warehouse
             InitializeComponent();
         }
         
-        private void LoadWareHouse()
+        public void LoadWareHouse()
         {
             string sql = "SELECT Warehouse_Id, Name, Address, Phone, Email,Stock FROM ClothesShopManagement.dbo.Warehouse";
             dataGridView1.DataSource = CRUD_Data.GetData(sql);
@@ -42,7 +43,15 @@ namespace ClothesShopManagement.Warehouse
         private void ViewingWarehouse_Load(object sender, EventArgs e)
         {
             LoadWareHouse();
-        }
+          
+
+                
+
+            }
+
+       
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -51,6 +60,7 @@ namespace ClothesShopManagement.Warehouse
                 if (addBrandForm.ShowDialog() == DialogResult.OK)
                 {
                     LoadWareHouse();
+
                 }
             }
         }
@@ -87,7 +97,7 @@ namespace ClothesShopManagement.Warehouse
             {
                 // Get the selected row
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                string warehouseId = selectedRow.Cells["Warehouse_Id"].Value.ToString();
+                int warehouseId = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value.ToString());
 
                 // Confirm deletion
                 DialogResult confirmResult = MessageBox.Show($"Are you sure you want to delete warehouse {warehouseId}?", "Confirm Delete", MessageBoxButtons.YesNo);
@@ -126,9 +136,9 @@ namespace ClothesShopManagement.Warehouse
             {
                 // Get the selected row
                 var selectedRow = dataGridView1.SelectedRows[0];
-                var warehouse = new ModelClass.Warehouse
+                var warehouse = new ModelClass.WareHouse()
                 {
-                    WarehouseId = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value.ToString()),
+                    Warehouse_Id = Convert.ToInt32(selectedRow.Cells["Warehouse_Id"].Value.ToString()),
                     Name = selectedRow.Cells["Name"].Value.ToString(),
                     Address = selectedRow.Cells["Address"].Value.ToString(),
                     Phone = selectedRow.Cells["Phone"].Value.ToString(),
@@ -165,6 +175,13 @@ namespace ClothesShopManagement.Warehouse
                 {
                     detailWarehouseForm.SetWarehouseId(warehouseId);  // Truyền ID nhà kho vào form chi tiết
                     detailWarehouseForm.ShowDialog();  // Hiển thị form chi tiết
+                }
+                using (AddingWarehouseProduct addBrandForm = new AddingWarehouseProduct(warehouseId))
+                {
+                    
+                        LoadWareHouse();
+
+                   
                 }
             }
         }

@@ -26,16 +26,23 @@ namespace ClothesShopManagement.Warehouse
             string name = textBox2.Text.Trim();    // Assuming textBox2 is for Warehouse Name
             string address = textBox3.Text.Trim(); // Assuming textBox3 is for Warehouse Address
             string phoneNumber = textBox4.Text.Trim(); // Assuming textBox4 is for Warehouse Phone Number
-            string email = textBox5.Text.Trim();   // Assuming textBox5 is for Warehouse Email
+            string email = textBox5.Text.Trim();
+
+            // Default stock value is 0
             int stock = 0; // Default value for stock
-            if (int.TryParse(textBox6.Text.Trim(), out int result)) // Assuming textBox6 is for Stock
+
+            // Validate that the name, address, phone number, and email are not empty
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(email))
             {
-                stock = result; // If the value is valid, assign it to stock
+                MessageBox.Show("Please fill in all the fields.");
+                return;
             }
-            else
+
+            // Try parsing the stock value entered by the user
+            if (!int.TryParse(textBox6.Text.Trim(), out stock))
             {
-                MessageBox.Show("Please enter a valid stock number.");
-                return; // Exit if stock is invalid
+                // If parsing fails, stock remains 0. You could also prompt the user to enter a valid number.
+                MessageBox.Show("Invalid stock value. Stock will be set to 0.");
             }
 
             // SQL command to insert a new warehouse without specifying Warehouse_Id (auto-generated)
@@ -45,26 +52,32 @@ namespace ClothesShopManagement.Warehouse
             // Create parameters for the SQL command
             SqlParameter[] parameters = new SqlParameter[]
             {
-              new SqlParameter("@Name", name),
-              new SqlParameter("@Address", address),
-              new SqlParameter("@Phone", phoneNumber),
-              new SqlParameter("@Email", email),
-              new SqlParameter("@Stock", stock)
+                new SqlParameter("@Name", name),
+                new SqlParameter("@Address", address),
+                new SqlParameter("@Phone", phoneNumber),
+                new SqlParameter("@Email", email),
+                new SqlParameter("@Stock", stock)
             };
 
-            // Execute the command
-            int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Warehouse added successfully!");
-                this.DialogResult = DialogResult.OK; // Set the dialog result to OK
-                this.Close(); // Close the form
+                // Execute the command
+                int rowsAffected = CRUD_Data.ExecuteNonQuery(sql, parameters);
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Warehouse added successfully!");
+                    this.DialogResult = DialogResult.OK; // Set the dialog result to OK
+                    this.Close(); // Close the form
+                }
+                else
+                {
+                    MessageBox.Show("Error adding warehouse. Please try again.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error adding warehouse. Please try again.");
+                MessageBox.Show($"Error: {ex.Message}");
             }
-
         }
     }
 }

@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="ModelClass\Brand.cs" />
     <Compile Include="ModelClass\Product.cs" />
+    <Compile Include="ModelClass\WareHouse.cs" />
     <Compile Include="Product\AddingProduct.cs">
       <SubType>Form</SubType>
     </Compile>
