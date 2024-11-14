@@ -13,13 +13,14 @@ namespace ClothesShopManagement
     public partial class HomeForm : Form
     {
         private bool isAdmin;
-        public HomeForm(bool isAdmin, string usernameCurrently)
+        private int StaffId;
+        public HomeForm(bool isAdmin, string usernameCurrently,int staffid)
         {
             InitializeComponent();
             this.isAdmin = isAdmin;
             btnStaff.Visible = isAdmin;
             label1.Text += usernameCurrently;
-
+            StaffId = staffid; 
             btnThoat.FlatAppearance.BorderSize = 0;
         }
 
@@ -47,7 +48,7 @@ namespace ClothesShopManagement
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            ShowFormInPanel(new Bill.ViewingBill());
+            ShowFormInPanel(new Bill.ViewingBill(StaffId));
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)

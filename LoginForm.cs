@@ -25,9 +25,9 @@ namespace ClothesShopManagement
             string username = txtUsername.Text; 
             string password = txtPassword.Text; 
 
-            if (AuthenticateUser(username, password, out bool isAdmin, out string usernameCurrently))
+            if (AuthenticateUser(username, password, out bool isAdmin, out string usernameCurrently,out int staffid))
             {
-                HomeForm homeForm = new HomeForm(isAdmin, usernameCurrently);
+                HomeForm homeForm = new HomeForm(isAdmin, usernameCurrently,staffid);
                 homeForm.Show();
                 this.Hide();
             }
@@ -36,11 +36,12 @@ namespace ClothesShopManagement
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại.");
             }
         }
-        private bool AuthenticateUser(string username, string password, out bool isAdmin, out string usernameCurrently)
+        private bool AuthenticateUser(string username, string password, out bool isAdmin, out string usernameCurrently,out int staffid)
         {
             isAdmin = false;
             usernameCurrently = string.Empty; // Khởi tạo biến cho tên
-            string sql = "SELECT RoleId, Name FROM Staff WHERE Username = @Username AND Password = @Password";
+            staffid = 0;
+            string sql = "SELECT StaffId, RoleId, Name FROM Staff WHERE Username = @Username AND Password = @Password";
 
             try
             {
@@ -56,9 +57,10 @@ namespace ClothesShopManagement
                         {
                             if (reader.Read())
                             {
-                                int roleId = reader.GetInt32(0);
-                                usernameCurrently = reader.GetString(1);
+                                int roleId = reader.GetInt32(1);
+                                usernameCurrently = reader.GetString(2);
                                 isAdmin = roleId == 0;
+                                staffid = reader.GetInt32(0);
                                 return true;
                             }
                         }

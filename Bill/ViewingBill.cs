@@ -13,8 +13,10 @@ namespace ClothesShopManagement.Bill
 {
     public partial class ViewingBill : Form
     {
-        public ViewingBill()
+        private int StaffId;
+        public ViewingBill(int staffid)
         {
+            StaffId = staffid;
             InitializeComponent();
         }
 
@@ -95,6 +97,25 @@ namespace ClothesShopManagement.Bill
             }
 
             Load_Staff();
+        }
+
+        private void btn_AddBill_Click(object sender, EventArgs e)
+        {
+            AddingBill addingBill = new AddingBill(StaffId);
+            addingBill.ShowDialog();
+        }
+
+        private void dgv_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgv_Bill.Rows[e.RowIndex];
+                int billId = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                new ViewingBillDetail(billId).ShowDialog();
+
+
+            }
         }
     }
 }
