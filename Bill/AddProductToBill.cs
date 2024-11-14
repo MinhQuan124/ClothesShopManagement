@@ -21,23 +21,27 @@ namespace ClothesShopManagement.Bill
         }
         private void LoadWarehouses()
         {
-            StyleSet.DataGridViewStyle(dgvProducts);
             DataTable warehouses = CRUD_Data.GetData("SELECT Warehouse_Id, Name FROM Warehouse");
             cmbWarehouse.DataSource = warehouses;
             cmbWarehouse.DisplayMember = "Name";
-            cmbWarehouse.ValueMember = "Warehouse_Id";
-            //
+            cmbWarehouse.ValueMember = "Warehouse_Id"; 
+        }
+        private void AddProductToBill_Load(object sender, EventArgs e)
+        {
+            StyleSet.DataGridViewStyle(dgvProducts);
+            LoadWarehouses();
+            LoadDGV();
+        }
 
-            if (dgvProducts.Columns["WarehouseProduct_Id"] != null) dgvProducts.Columns["WarehouseProduct_Id"].HeaderText = "Mã sản phẩm trong kho";
+        private void LoadDGV()
+        {
+            if (dgvProducts.Columns["WarehouseProduct_Id"] != null) dgvProducts.Columns["WarehouseProduct_Id"].Visible = false;
             if (dgvProducts.Columns["ProductName"] != null) dgvProducts.Columns["ProductName"].HeaderText = "Tên sản phẩm";
             if (dgvProducts.Columns["Size"] != null) dgvProducts.Columns["Size"].HeaderText = "Size";
             if (dgvProducts.Columns["Price"] != null) dgvProducts.Columns["Price"].HeaderText = "Giá";
             if (dgvProducts.Columns["Quantity"] != null) dgvProducts.Columns["Quantity"].HeaderText = "Số lượng";
         }
-        private void AddProductToBill_Load(object sender, EventArgs e)
-        {
-            LoadWarehouses();
-        }
+
         private void LoadProduct(int warehouseId)
         {
             string sql = @"
@@ -71,6 +75,8 @@ namespace ClothesShopManagement.Bill
             if (cmbWarehouse.SelectedValue != null && int.TryParse(cmbWarehouse.SelectedValue.ToString(), out warehouseId))
             {
                 LoadProduct(warehouseId);
+                LoadDGV();
+
             }
         }
 
@@ -94,6 +100,7 @@ namespace ClothesShopManagement.Bill
                     {
                         WarehouseProduct_Id = Convert.ToInt32(selectedRow.Cells["WarehouseProduct_Id"].Value),
                         ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
+                        Size = selectedRow.Cells["Size"].Value.ToString(),
                         Price = Convert.ToSingle(selectedRow.Cells["Price"].Value),
                         Quanity = Convert.ToInt32(txtQuanity.Text),
                         // Lấy các thuộc tính khác tương tự
@@ -111,6 +118,11 @@ namespace ClothesShopManagement.Bill
                 MessageBox.Show("Vui lòng chọn một dòng để thêm.");
             }
            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

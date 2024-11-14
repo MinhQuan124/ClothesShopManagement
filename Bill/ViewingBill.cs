@@ -23,7 +23,7 @@ namespace ClothesShopManagement.Bill
         private void ViewingBill_Load(object sender, EventArgs e)
         {
             StyleSet.DataGridViewStyle(dgv_Bill);
-            Load_Staff();
+            Load_Bill();
 
             // Check if DataGridView has been populated with data to avoid NullReferenceException
             if (dgv_Bill.Columns["Bill_Id"] != null) dgv_Bill.Columns["Bill_Id"].HeaderText = "Mã hóa đơn";
@@ -34,7 +34,7 @@ namespace ClothesShopManagement.Bill
             if (dgv_Bill.Columns["Total"] != null) dgv_Bill.Columns["Total"].HeaderText = "Tổng hóa đơn";
         }
 
-        private void Load_Staff()
+        private void Load_Bill()
         {
             string query = @"
         SELECT b.Bill_Id, 
@@ -96,13 +96,17 @@ namespace ClothesShopManagement.Bill
                 MessageBox.Show("Không tìm thấy thông tin khách hàng.");
             }
 
-            Load_Staff();
+            Load_Bill();
         }
 
         private void btn_AddBill_Click(object sender, EventArgs e)
         {
             AddingBill addingBill = new AddingBill(StaffId);
-            addingBill.ShowDialog();
+            var result =  addingBill.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Load_Bill();
+            }
         }
 
         private void dgv_Bill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

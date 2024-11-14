@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
+using ClothesShopManagement.Customer;
 
 namespace ClothesShopManagement.Bill
 {
@@ -31,6 +32,17 @@ namespace ClothesShopManagement.Bill
         {
             LoadCmbCustomer();
             StyleSet.DataGridViewStyle(dgvBillDetail);
+            LoadDGV();
+        }
+
+        private void LoadDGV() 
+        {
+            if (dgvBillDetail.Columns["WarehouseProduct_Id"] != null) dgvBillDetail.Columns["WarehouseProduct_Id"].Visible = false;
+            if (dgvBillDetail.Columns["ProductName"] != null) dgvBillDetail.Columns["ProductName"].HeaderText = "Tên sản phẩm";
+            if (dgvBillDetail.Columns["Size"] != null) dgvBillDetail.Columns["Size"].HeaderText = "Size";
+            if (dgvBillDetail.Columns["Price"] != null) dgvBillDetail.Columns["Price"].HeaderText = "Giá";
+            if (dgvBillDetail.Columns["Quantity"] != null) dgvBillDetail.Columns["Quantity"].HeaderText = "Số lượng";
+            if (dgvBillDetail.Columns["Total"] != null) dgvBillDetail.Columns["Total"].HeaderText = "Tổng";
         }
 
         private void LoadCmbCustomer()
@@ -39,13 +51,7 @@ namespace ClothesShopManagement.Bill
             cmbCustomer.DataSource = CustomerTable;
             cmbCustomer.DisplayMember = "Name";
             cmbCustomer.ValueMember = "CustomerId";
-            //
-            if (dgvBillDetail.Columns["WarehouseProduct_Id"] != null) dgvBillDetail.Columns["WarehouseProduct_Id"].HeaderText = "Mã sản phẩm trong kho";
-            if (dgvBillDetail.Columns["ProductName"] != null) dgvBillDetail.Columns["ProductName"].HeaderText = "Tên sản phẩm";
-            if (dgvBillDetail.Columns["Price"] != null) dgvBillDetail.Columns["Price"].HeaderText = "Giá";
-            if (dgvBillDetail.Columns["Quantity"] != null) dgvBillDetail.Columns["Quantity"].HeaderText = "Số lượng";
-            if (dgvBillDetail.Columns["Total"] != null) dgvBillDetail.Columns["Total"].HeaderText = "Tổng";
-
+            cmbCustomer.SelectedIndex = CustomerTable.Rows.Count - 1; 
             CalculationDiscount();
         }
 
@@ -53,6 +59,7 @@ namespace ClothesShopManagement.Bill
         {
             dgvBillDetail.DataSource = null;  
             dgvBillDetail.DataSource = addProducts;
+            LoadDGV();
         }
        
 
@@ -173,6 +180,7 @@ namespace ClothesShopManagement.Bill
                     CRUD_Data.ExecuteNonQuery(queryUpdate, parametersUpdate);
                 }
                 MessageBox.Show("Đã thêm hóa đơn thành công.");
+                DialogResult = DialogResult.OK;
                 this.Close();
 
             }
@@ -192,6 +200,17 @@ namespace ClothesShopManagement.Bill
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
           CalculationDiscount();
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            AddCustomer addCustomer = new AddCustomer();
+
+            var result = addCustomer.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                LoadCmbCustomer();
+            }
         }
     }
 }
