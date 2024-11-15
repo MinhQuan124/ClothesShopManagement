@@ -70,7 +70,7 @@
     <Compile Include="Brand\ViewingBrand.Designer.cs">
       <DependentUpon>ViewingBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="CRUD_Date.cs" />
+    <Compile Include="CRUD_Data.cs" />
     <Compile Include="Customer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
