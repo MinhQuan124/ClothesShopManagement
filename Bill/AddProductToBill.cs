@@ -30,6 +30,11 @@ namespace ClothesShopManagement.Bill
         {
             StyleSet.DataGridViewStyle(dgvProducts);
             LoadWarehouses();
+            int warehouseId = 0;
+            if (cmbWarehouse.SelectedValue != null && int.TryParse(cmbWarehouse.SelectedValue.ToString(), out warehouseId))
+            {
+                LoadProduct(warehouseId);
+            }
             LoadDGV();
         }
 
@@ -86,31 +91,40 @@ namespace ClothesShopManagement.Bill
         {
             if (dgvProducts.SelectedRows.Count > 0)
             {
-                if(txtQuanity.Text == "")
+                int checkQuanity = Convert.ToInt32(txtQuanity.Text);
+                int checkQuanity_2 = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Quantity"].Value);
+                if (checkQuanity > checkQuanity_2)
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng.");
+                    MessageBox.Show("Không thể bán số lượng lớn hơn trong kho.");
                 }
                 else
                 {
-                    // Giả sử `Staff` là lớp chứa các thuộc tính của nhân viên
-                    var selectedRow = dgvProducts.SelectedRows[0];
-
-                    // Lấy dữ liệu từ các ô trong dòng được chọn
-                    AddProduct addProduct = new AddProduct
+                    if (txtQuanity.Text == "")
                     {
-                        WarehouseProduct_Id = Convert.ToInt32(selectedRow.Cells["WarehouseProduct_Id"].Value),
-                        ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
-                        Size = selectedRow.Cells["Size"].Value.ToString(),
-                        Price = Convert.ToSingle(selectedRow.Cells["Price"].Value),
-                        Quanity = Convert.ToInt32(txtQuanity.Text),
-                        // Lấy các thuộc tính khác tương tự
-                    };
-                    // Thêm vào danh sách
-                    addProducts.Add(addProduct);
+                        MessageBox.Show("Vui lòng nhập số lượng.");
+                    }
+                    else
+                    {
+                        var selectedRow = dgvProducts.SelectedRows[0];
 
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                        // Lấy dữ liệu từ các ô trong dòng được chọn
+                        AddProduct addProduct = new AddProduct
+                        {
+                            WarehouseProduct_Id = Convert.ToInt32(selectedRow.Cells["WarehouseProduct_Id"].Value),
+                            ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
+                            Size = selectedRow.Cells["Size"].Value.ToString(),
+                            Price = Convert.ToSingle(selectedRow.Cells["Price"].Value),
+                            Quanity = Convert.ToInt32(txtQuanity.Text),
+                            // Lấy các thuộc tính khác tương tự
+                        };
+                        // Thêm vào danh sách
+                        addProducts.Add(addProduct);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
+               
                 
             }
             else
