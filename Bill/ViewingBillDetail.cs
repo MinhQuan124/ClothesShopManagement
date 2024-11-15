@@ -62,6 +62,7 @@ namespace ClothesShopManagement.Bill
             SELECT 
                p.ProductName,
                bd.Quantity,
+               p.Size,
                bd.Price,
                bd.Total
              FROM 
@@ -88,6 +89,15 @@ namespace ClothesShopManagement.Bill
         private void ViewingBillDetail_Load(object sender, EventArgs e)
         {
             LoadBillDetail();
+            LoadDGV();
+        }
+        private void LoadDGV()
+        {
+            if (dgvBillDetail.Columns["ProductName"] != null) dgvBillDetail.Columns["ProductName"].HeaderText = "Tên sản phẩm";
+            if (dgvBillDetail.Columns["Quantity"] != null) dgvBillDetail.Columns["Quantity"].HeaderText = "Số lượng";
+            if (dgvBillDetail.Columns["Size"] != null) dgvBillDetail.Columns["Size"].HeaderText = "Size";
+            if (dgvBillDetail.Columns["Price"] != null) dgvBillDetail.Columns["Price"].HeaderText = "Giá";
+            if (dgvBillDetail.Columns["Total"] != null) dgvBillDetail.Columns["Total"].HeaderText = "Tổng";           
         }
     }
 }

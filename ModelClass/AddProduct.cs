@@ -10,6 +10,8 @@ namespace ClothesShopManagement.ModelClass
     {
         public  int WarehouseProduct_Id { get; set; }
         public string ProductName { get; set; }
+        public string Size { get; set; }
+
         public float Price { get; set; }
         public int Quanity { get; set; }
         public decimal Total
