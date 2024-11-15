@@ -52,7 +52,8 @@ namespace ClothesShopManagement.Bill
             cmbCustomer.DisplayMember = "Name";
             cmbCustomer.ValueMember = "CustomerId";
             cmbCustomer.SelectedIndex = CustomerTable.Rows.Count - 1; 
-            CalculationDiscount();
+            if(CustomerTable!=null&& CustomerTable.Rows.Count > 0)
+              CalculationDiscount();
         }
 
         private void LoadBillDetail()
