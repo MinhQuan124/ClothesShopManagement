@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -308,6 +309,9 @@
     <EmbeddedResource Include="Staff\ViewingStaff.resx">
       <DependentUpon>ViewingStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ViewingStatictis.resx">
+      <DependentUpon>ViewingStatictis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WareHouseProduct\AddingWarehouseProduct.resx">
       <DependentUpon>AddingWarehouseProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +342,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="images\chart.jpg" />
     <Content Include="images\IconSearch.png" />
     <Content Include="images\LoginPic.jpg" />
     <Content Include="images\textlogin.png" />

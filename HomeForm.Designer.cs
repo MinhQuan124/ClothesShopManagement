@@ -69,7 +69,7 @@
             this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnProducts.Location = new System.Drawing.Point(35, 108);
-            this.btnProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(267, 60);
             this.btnProducts.TabIndex = 7;
@@ -83,7 +83,7 @@
             this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCustomers.Location = new System.Drawing.Point(35, 191);
-            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(267, 60);
             this.btnCustomers.TabIndex = 8;
@@ -97,7 +97,7 @@
             this.btnBill.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBill.Location = new System.Drawing.Point(35, 274);
-            this.btnBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(267, 60);
             this.btnBill.TabIndex = 9;
@@ -111,11 +111,11 @@
             this.btnStatistic.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnStatistic.Location = new System.Drawing.Point(35, 362);
-            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Size = new System.Drawing.Size(267, 60);
             this.btnStatistic.TabIndex = 10;
-            this.btnStatistic.Text = "DOANH THU";
+            this.btnStatistic.Text = "THỐNG KÊ";
             this.btnStatistic.UseVisualStyleBackColor = false;
             this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
@@ -125,7 +125,7 @@
             this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWarehouse.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnWarehouse.Location = new System.Drawing.Point(35, 447);
-            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWarehouse.Margin = new System.Windows.Forms.Padding(4);
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(267, 60);
             this.btnWarehouse.TabIndex = 11;
@@ -139,7 +139,7 @@
             this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnStaff.Location = new System.Drawing.Point(35, 625);
-            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(267, 60);
             this.btnStaff.TabIndex = 12;
@@ -153,7 +153,7 @@
             this.btnImportBill.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportBill.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnImportBill.Location = new System.Drawing.Point(35, 534);
-            this.btnImportBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportBill.Name = "btnImportBill";
             this.btnImportBill.Size = new System.Drawing.Size(267, 60);
             this.btnImportBill.TabIndex = 13;
@@ -169,7 +169,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThoat.Location = new System.Drawing.Point(35, 758);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(267, 60);
             this.btnThoat.TabIndex = 14;

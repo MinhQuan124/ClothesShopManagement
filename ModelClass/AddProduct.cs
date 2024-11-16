@@ -9,6 +9,7 @@ namespace ClothesShopManagement.ModelClass
     public class AddProduct
     {
         public  int WarehouseProduct_Id { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string Size { get; set; }
 
