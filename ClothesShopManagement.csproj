@@ -338,6 +338,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="images\icon-bill.png" />
+    <Content Include="images\icon-cart.png" />
+    <Content Include="images\icon-user.png" />
     <Content Include="images\IconSearch.png" />
     <Content Include="images\LoginPic.jpg" />
     <Content Include="images\textlogin.png" />
