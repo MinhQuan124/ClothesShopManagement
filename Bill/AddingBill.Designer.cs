@@ -142,9 +142,9 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Location = new System.Drawing.Point(-17, -2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1306, 45);
+            this.label6.Size = new System.Drawing.Size(1352, 56);
             this.label6.TabIndex = 12;
             this.label6.Text = "Thêm hóa đơn";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
