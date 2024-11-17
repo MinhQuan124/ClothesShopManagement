@@ -36,14 +36,15 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelSection2 = new System.Windows.Forms.Label();
             this.labelWrapper2 = new System.Windows.Forms.Label();
             this.labelSection3 = new System.Windows.Forms.Label();
             this.labelWrapper3 = new System.Windows.Forms.Label();
+            this.picB_Section2 = new System.Windows.Forms.PictureBox();
+            this.labelInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Section2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelWrapper1
@@ -68,6 +69,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1081, 355);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // labelSection1
             // 
@@ -127,19 +129,14 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(226, 92);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pictureBox1.Image = global::ClothesShopManagement.Properties.Resources.icon_bill;
+            this.pictureBox1.Location = new System.Drawing.Point(248, 87);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(607, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 79);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
             // 
             // labelSection2
             // 
@@ -188,15 +185,37 @@
             this.labelWrapper3.TabIndex = 39;
             this.labelWrapper3.Text = "DOANH THU";
             // 
+            // picB_Section2
+            // 
+            this.picB_Section2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.picB_Section2.Image = global::ClothesShopManagement.Properties.Resources.icon_user;
+            this.picB_Section2.Location = new System.Drawing.Point(627, 87);
+            this.picB_Section2.Name = "picB_Section2";
+            this.picB_Section2.Size = new System.Drawing.Size(114, 120);
+            this.picB_Section2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picB_Section2.TabIndex = 41;
+            this.picB_Section2.TabStop = false;
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.Location = new System.Drawing.Point(43, 755);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(290, 20);
+            this.labelInfo.TabIndex = 42;
+            this.labelInfo.Text = "(*) Đúp chuột vào hóa đơn để xem chi tiết.";
+            // 
             // ViewingStatictis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1172, 903);
+            this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.picB_Section2);
             this.Controls.Add(this.labelSection3);
             this.Controls.Add(this.labelWrapper3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.labelSection2);
             this.Controls.Add(this.labelWrapper2);
             this.Controls.Add(this.pictureBox1);
@@ -213,7 +232,7 @@
             this.Text = "ViewingStatictis";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picB_Section2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,10 +248,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelSection2;
         private System.Windows.Forms.Label labelWrapper2;
         private System.Windows.Forms.Label labelSection3;
         private System.Windows.Forms.Label labelWrapper3;
+        private System.Windows.Forms.PictureBox picB_Section2;
+        private System.Windows.Forms.Label labelInfo;
     }
 }
