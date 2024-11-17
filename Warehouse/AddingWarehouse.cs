@@ -34,7 +34,7 @@ namespace ClothesShopManagement.Warehouse
             // Validate that the name, address, phone number, and email are not empty
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(email))
             {
-                MessageBox.Show("Please fill in all the fields.");
+                MessageBox.Show("Vui lòng nhập vào các trường dữ liệu.");
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace ClothesShopManagement.Warehouse
             if (!int.TryParse(textBox6.Text.Trim(), out stock))
             {
                 // If parsing fails, stock remains 0. You could also prompt the user to enter a valid number.
-                MessageBox.Show("Invalid stock value. Stock will be set to 0.");
+                MessageBox.Show("Giá trị sức chứa lỗi. Sức chứa sẽ được đặt bằng 0.");
             }
 
             // SQL command to insert a new warehouse without specifying Warehouse_Id (auto-generated)
@@ -71,7 +71,7 @@ namespace ClothesShopManagement.Warehouse
                 }
                 else
                 {
-                    MessageBox.Show("Error adding warehouse. Please try again.");
+                    MessageBox.Show("Lỗi thêm nhà kho. Vui lòng thử lại");
                 }
             }
             catch (Exception ex)

@@ -84,7 +84,7 @@ namespace ClothesShopManagement.Bill
             if (billCount > 0)
             {
                 DeleteBillAndDetails(billId);
-                MessageBox.Show("Chỉ hóa đơn đã bị xóa.");
+                MessageBox.Show("Hóa đơn đã bị xóa.");
             }
             else
             {
@@ -114,7 +114,7 @@ namespace ClothesShopManagement.Bill
                 {
                     productList.AppendLine($"ProductId: {detail.ProductId}, Quantity: {detail.Quantity}");
                 }
-                MessageBox.Show("Các ProductId trong BillDetail:\n" + productList.ToString(), "Thông tin sản phẩm");
+                MessageBox.Show("Các mã sản phẩm trong hóa đơn:\n" + productList.ToString(), "Thông tin sản phẩm");
 
                 // Cập nhật số lượng sản phẩm trong bảng Product và WarehouseProduct
                 foreach (var detail in billDetails)
@@ -178,7 +178,7 @@ namespace ClothesShopManagement.Bill
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sản phẩm trong BillDetail của hóa đơn này.");
+                MessageBox.Show("Không tìm thấy sản phẩm trong hóa đơn bán này.");
             }
         }
 
@@ -238,15 +238,15 @@ namespace ClothesShopManagement.Bill
                 // Duyệt qua danh sách billDetailsList để tạo chuỗi thông tin sản phẩm
                 foreach (var detail in billDetailsList)
                 {
-                    productList.AppendLine($"ProductId: {detail.ProductId}, Quantity: {detail.Quantity}");
+                    productList.AppendLine($"Mã sản phẩm: {detail.ProductId}, số lượng: {detail.Quantity}");
                 }
 
                 // Hiển thị danh sách sản phẩm trong MessageBox
-                MessageBox.Show("Danh sách sản phẩm trong BillDetail:\n" + productList.ToString(), "Thông tin BillDetail");
+                MessageBox.Show("Danh sách sản phẩm trong hóa đơn bán:\n" + productList.ToString(), "Thông tin hóa đơn bán");
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sản phẩm cho BillId đã chọn.");
+                MessageBox.Show("Không tìm thấy sản phẩm cho hóa đơn đã chọn.");
             }
         }
 
