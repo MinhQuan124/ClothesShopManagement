@@ -22,6 +22,8 @@ namespace ClothesShopManagement
             label1.Text += usernameCurrently;
             StaffId = staffid; 
             btnThoat.FlatAppearance.BorderSize = 0;
+
+
         }
 
         public void ShowFormInPanel(Form form)

@@ -40,11 +40,14 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PanelForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelForm
             // 
             this.PanelForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PanelForm.Controls.Add(this.label4);
             this.PanelForm.Location = new System.Drawing.Point(342, -1);
             this.PanelForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelForm.Name = "PanelForm";
@@ -195,6 +198,17 @@
             this.label3.Size = new System.Drawing.Size(381, 11);
             this.label3.TabIndex = 16;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(280, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(666, 62);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Chúc bạn một ngày tốt lành! ";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,6 +233,8 @@
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
+            this.PanelForm.ResumeLayout(false);
+            this.PanelForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,5 +253,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
