@@ -36,6 +36,8 @@
             this.txtQuanity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSellingPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,9 +45,10 @@
             // 
             this.cmbWarehouse.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbWarehouse.FormattingEnabled = true;
-            this.cmbWarehouse.Location = new System.Drawing.Point(211, 84);
+            this.cmbWarehouse.Location = new System.Drawing.Point(188, 67);
+            this.cmbWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbWarehouse.Name = "cmbWarehouse";
-            this.cmbWarehouse.Size = new System.Drawing.Size(189, 38);
+            this.cmbWarehouse.Size = new System.Drawing.Size(168, 33);
             this.cmbWarehouse.TabIndex = 0;
             this.cmbWarehouse.SelectedIndexChanged += new System.EventHandler(this.cmbWarehouse_SelectedIndexChanged);
             // 
@@ -53,20 +56,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 87);
+            this.label1.Location = new System.Drawing.Point(98, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 30);
+            this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhà kho :";
             // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(13, 151);
+            this.dgvProducts.Location = new System.Drawing.Point(12, 121);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 62;
             this.dgvProducts.RowTemplate.Height = 28;
-            this.dgvProducts.Size = new System.Drawing.Size(1305, 434);
+            this.dgvProducts.Size = new System.Drawing.Size(1160, 347);
             this.dgvProducts.TabIndex = 2;
             // 
             // btn_Save
@@ -74,9 +78,10 @@
             this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.btn_Save.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(910, 665);
+            this.btn_Save.Location = new System.Drawing.Point(809, 532);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(185, 72);
+            this.btn_Save.Size = new System.Drawing.Size(164, 58);
             this.btn_Save.TabIndex = 3;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.UseVisualStyleBackColor = false;
@@ -87,9 +92,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1114, 665);
+            this.button2.Location = new System.Drawing.Point(990, 532);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 72);
+            this.button2.Size = new System.Drawing.Size(164, 58);
             this.button2.TabIndex = 4;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = false;
@@ -98,18 +104,19 @@
             // txtQuanity
             // 
             this.txtQuanity.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuanity.Location = new System.Drawing.Point(1015, 101);
+            this.txtQuanity.Location = new System.Drawing.Point(979, 68);
+            this.txtQuanity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuanity.Name = "txtQuanity";
-            this.txtQuanity.Size = new System.Drawing.Size(100, 37);
+            this.txtQuanity.Size = new System.Drawing.Size(89, 32);
             this.txtQuanity.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(898, 101);
+            this.label2.Location = new System.Drawing.Point(877, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 30);
+            this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Số lượng :";
             // 
@@ -118,18 +125,39 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(-9, 2);
+            this.label3.Location = new System.Drawing.Point(11, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1352, 56);
+            this.label3.Size = new System.Drawing.Size(1161, 45);
             this.label3.TabIndex = 7;
             this.label3.Text = "Thêm sản phẩm vào hóa đơn";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(464, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nhập giá bán :";
+            // 
+            // txtSellingPrice
+            // 
+            this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSellingPrice.Location = new System.Drawing.Point(605, 70);
+            this.txtSellingPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSellingPrice.Name = "txtSellingPrice";
+            this.txtSellingPrice.Size = new System.Drawing.Size(229, 32);
+            this.txtSellingPrice.TabIndex = 8;
+            // 
             // AddProductToBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 808);
+            this.ClientSize = new System.Drawing.Size(1182, 646);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtSellingPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtQuanity);
@@ -138,6 +166,7 @@
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.cmbWarehouse);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddProductToBill";
             this.Text = "AddProductToBill";
             this.Load += new System.EventHandler(this.AddProductToBill_Load);
@@ -157,5 +186,7 @@
         private System.Windows.Forms.TextBox txtQuanity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSellingPrice;
     }
 }

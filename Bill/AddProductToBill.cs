@@ -41,9 +41,10 @@ namespace ClothesShopManagement.Bill
         private void LoadDGV()
         {
             if (dgvProducts.Columns["WarehouseProduct_Id"] != null) dgvProducts.Columns["WarehouseProduct_Id"].Visible = false;
-            if (dgvProducts.Columns["ProductName"] != null) dgvProducts.Columns["ProductName"].HeaderText = "Tên sản phẩm";
-            if (dgvProducts.Columns["Size"] != null) dgvProducts.Columns["Size"].HeaderText = "Size";
-            if (dgvProducts.Columns["Price"] != null) dgvProducts.Columns["Price"].HeaderText = "Giá";
+            if (dgvProducts.Columns["ProductId"] != null) dgvProducts.Columns["ProductId"].Visible = false;
+            if (dgvProducts.Columns["ProductName"] != null) dgvProducts.Columns["ProductName"].HeaderText = "Tên quần áo";
+            if (dgvProducts.Columns["Size"] != null) dgvProducts.Columns["Size"].HeaderText = "Kích cỡ";
+            if (dgvProducts.Columns["Price"] != null) dgvProducts.Columns["Price"].HeaderText = "Đơn giá";
             if (dgvProducts.Columns["Quantity"] != null) dgvProducts.Columns["Quantity"].HeaderText = "Số lượng";
         }
 
@@ -52,6 +53,7 @@ namespace ClothesShopManagement.Bill
             string sql = @"
             SELECT 
                wp.WarehouseProduct_Id,
+               p.ProductId,
                p.ProductName,
                p.Size,
                p.Price,
@@ -81,7 +83,6 @@ namespace ClothesShopManagement.Bill
             {
                 LoadProduct(warehouseId);
                 LoadDGV();
-
             }
         }
 
@@ -91,45 +92,71 @@ namespace ClothesShopManagement.Bill
         {
             if (dgvProducts.SelectedRows.Count > 0)
             {
-                int checkQuanity = Convert.ToInt32(txtQuanity.Text);
+                if (string.IsNullOrWhiteSpace(txtQuanity.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtQuanity.Focus();
+                    return;
+                }
+
+                if (!int.TryParse(txtQuanity.Text, out int checkQuanity) || checkQuanity <= 0)
+                {
+                    MessageBox.Show("Số lượng phải là số nguyên dương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtQuanity.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtSellingPrice.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập giá bán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSellingPrice.Focus();
+                    return;
+                }
+
+                if (!float.TryParse(txtSellingPrice.Text, out float sellingPrice) || sellingPrice <= 0)
+                {
+                    MessageBox.Show("Giá bán phải lớn hơn 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSellingPrice.Focus();
+                    return;
+                }
+
                 int checkQuanity_2 = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["Quantity"].Value);
+
                 if (checkQuanity > checkQuanity_2)
                 {
-                    MessageBox.Show("Không thể bán số lượng lớn hơn trong kho.");
+                    MessageBox.Show("Không thể bán số lượng lớn hơn số lượng trong kho.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+
+                float importPrice = Convert.ToSingle(dgvProducts.SelectedRows[0].Cells["Price"].Value);
+
+                if (sellingPrice <= importPrice)
                 {
-                    if (txtQuanity.Text == "")
-                    {
-                        MessageBox.Show("Vui lòng nhập số lượng.");
-                    }
-                    else
-                    {
-                        var selectedRow = dgvProducts.SelectedRows[0];
-
-                        // Lấy dữ liệu từ các ô trong dòng được chọn
-                        AddProduct addProduct = new AddProduct
-                        {
-                            WarehouseProduct_Id = Convert.ToInt32(selectedRow.Cells["WarehouseProduct_Id"].Value),
-                            ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
-                            Size = selectedRow.Cells["Size"].Value.ToString(),
-                            Price = Convert.ToSingle(selectedRow.Cells["Price"].Value),
-                            Quanity = Convert.ToInt32(txtQuanity.Text),
-                            // Lấy các thuộc tính khác tương tự
-                        };
-                        // Thêm vào danh sách
-                        addProducts.Add(addProduct);
-
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
+                    MessageBox.Show("Giá bán phải lớn hơn giá nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSellingPrice.Focus();
+                    return;
                 }
-               
-                
+
+                var selectedRow = dgvProducts.SelectedRows[0];
+
+                AddProduct addProduct = new AddProduct
+                {
+                    WarehouseProduct_Id = Convert.ToInt32(selectedRow.Cells["WarehouseProduct_Id"].Value),
+                    ProductId = Convert.ToInt32(selectedRow.Cells["ProductId"].Value),
+                    ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
+                    Size = selectedRow.Cells["Size"].Value.ToString(),
+                    Price = sellingPrice,
+                    Quanity = checkQuanity, 
+                };
+
+                addProducts.Add(addProduct);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một dòng để thêm.");
+                MessageBox.Show("Vui lòng chọn một sản phẩm để thêm.");
             }
            
         }

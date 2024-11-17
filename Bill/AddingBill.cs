@@ -25,8 +25,6 @@ namespace ClothesShopManagement.Bill
         {
             StaffId = staffid;
             InitializeComponent();
-            
-            
         }
         private void AddingBill_Load(object sender, EventArgs e)
         {
@@ -38,11 +36,12 @@ namespace ClothesShopManagement.Bill
         private void LoadDGV() 
         {
             if (dgvBillDetail.Columns["WarehouseProduct_Id"] != null) dgvBillDetail.Columns["WarehouseProduct_Id"].Visible = false;
-            if (dgvBillDetail.Columns["ProductName"] != null) dgvBillDetail.Columns["ProductName"].HeaderText = "Tên sản phẩm";
-            if (dgvBillDetail.Columns["Size"] != null) dgvBillDetail.Columns["Size"].HeaderText = "Size";
-            if (dgvBillDetail.Columns["Price"] != null) dgvBillDetail.Columns["Price"].HeaderText = "Giá";
-            if (dgvBillDetail.Columns["Quantity"] != null) dgvBillDetail.Columns["Quantity"].HeaderText = "Số lượng";
-            if (dgvBillDetail.Columns["Total"] != null) dgvBillDetail.Columns["Total"].HeaderText = "Tổng";
+            if (dgvBillDetail.Columns["ProductId"] != null) dgvBillDetail.Columns["ProductId"].HeaderText = "Mã quần áo";
+            if (dgvBillDetail.Columns["ProductName"] != null) dgvBillDetail.Columns["ProductName"].HeaderText = "Tên quần áo";
+            if (dgvBillDetail.Columns["Size"] != null) dgvBillDetail.Columns["Size"].HeaderText = "Kích cỡ";
+            if (dgvBillDetail.Columns["Price"] != null) dgvBillDetail.Columns["Price"].HeaderText = "Giá bán";
+            if (dgvBillDetail.Columns["Quanity"] != null) dgvBillDetail.Columns["Quanity"].HeaderText = "Số lượng";
+            if (dgvBillDetail.Columns["Total"] != null) dgvBillDetail.Columns["Total"].HeaderText = "Tổng tiền";
         }
 
         private void LoadCmbCustomer()
@@ -52,8 +51,10 @@ namespace ClothesShopManagement.Bill
             cmbCustomer.DisplayMember = "Name";
             cmbCustomer.ValueMember = "CustomerId";
             cmbCustomer.SelectedIndex = CustomerTable.Rows.Count - 1; 
-            if(CustomerTable!=null&& CustomerTable.Rows.Count > 0)
-              CalculationDiscount();
+            if(CustomerTable !=null && CustomerTable.Rows.Count > 0)
+            {
+                CalculationDiscount();
+            }
         }
 
         private void LoadBillDetail()
@@ -95,8 +96,8 @@ namespace ClothesShopManagement.Bill
             object result = CRUD_Data.ExecuteScalar(query, parameters);
             int count = result != null && result != DBNull.Value ? Convert.ToInt32(result) : 0;
 
-            // Nếu khách hàng có ít nhất một hóa đơn trước đó, giảm giá 20%, nếu không thì là 0%
-            txtSale.Text = count > 0 ? "20" : "0";
+            // Nếu khách hàng có ít nhất một hóa đơn trước đó, giảm giá 10%, nếu không thì là 0%
+            txtSale.Text = count > 0 ? "10" : "0";
 
         }
 
@@ -153,20 +154,21 @@ namespace ClothesShopManagement.Bill
                 int newBillId = Convert.ToInt32(result);
                 foreach (var product in addProducts)
                 {
-                    string query_2 = "INSERT INTO Billdetail (Bill_Id, WarehouseProduct_Id, Quantity, Price,Total) " +
-                                   "VALUES (@billId, @warehouseProduct_Id, @quantity, @price, @total)";
+                    string query_2 = "INSERT INTO Billdetail (Bill_Id, WarehouseProduct_Id, ProductId, Quantity, Price, Total) " +
+                                   "VALUES (@billId, @warehouseProduct_Id, @productId, @quantity, @price, @total)";
                     SqlParameter[] parameters_2 = new SqlParameter[]
                     {
                      new SqlParameter("@billId", newBillId),
                      new SqlParameter("@warehouseProduct_Id", product.WarehouseProduct_Id),
+                     new SqlParameter("@productId", product.ProductId),
                      new SqlParameter("@quantity", product.Quanity),
                      new SqlParameter("@price", product.Price),
                      new SqlParameter("@total", product.Total)
                     };
                     //
                     CRUD_Data.ExecuteNonQuery(query_2, parameters_2);
-                  
-                    // 
+
+                    //Xóa số lượng trong bảng WarehouseProduct
                     string queryUpdate = "UPDATE WarehouseProduct " +
                                          "SET Quantity = Quantity - @quantity " +
                                          "WHERE WarehouseProduct_Id = @warehouseProduct_Id";
@@ -179,6 +181,18 @@ namespace ClothesShopManagement.Bill
 
                     // 
                     CRUD_Data.ExecuteNonQuery(queryUpdate, parametersUpdate);
+
+                    //Xóa số lượng trong bảng product
+                    string queryUpdateProduct = "UPDATE Product " +
+                                    "SET Quantity = Quantity - @quantity " +
+                                    "WHERE ProductId = (SELECT ProductId FROM WarehouseProduct WHERE WarehouseProduct_Id = @warehouseProduct_Id)";
+
+                    SqlParameter[] parametersUpdateProduct = new SqlParameter[] {
+                        new SqlParameter("@quantity", product.Quanity),
+                        new SqlParameter("@warehouseProduct_Id", product.WarehouseProduct_Id)
+                    };
+
+                    CRUD_Data.ExecuteNonQuery(queryUpdateProduct, parametersUpdateProduct);
                 }
                 MessageBox.Show("Đã thêm hóa đơn thành công.");
                 DialogResult = DialogResult.OK;
