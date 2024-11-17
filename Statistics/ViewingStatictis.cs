@@ -32,6 +32,7 @@ namespace ClothesShopManagement.Statistics
 
             dateTimePicker1.ShowUpDown = true;
 
+            comboBox1.SelectedIndex = 1;
         }
 
         public void LoadStatisticsType()
@@ -173,6 +174,8 @@ namespace ClothesShopManagement.Statistics
             {
                 if (comboBox1.SelectedIndex == 0)
                 {
+                    currentDgv = "";
+
                     labelSection1.Text = "0";
                     labelSection2.Text = "0";
                     labelSection3.Text = "0";
@@ -205,9 +208,7 @@ namespace ClothesShopManagement.Statistics
                 {
                     currentDgv = "bill";
 
-                    //string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
-                    //string imagePath = Path.Combine(projectRoot, "images", "icon-user.png");
-                    //picB_Section2.Image = Image.FromFile(imagePath);
+                    picB_Section2.Image = ClothesShopManagement.Properties.Resources.icon_user;
 
                     labelInfo.Visible = true;
                     dateTimePicker1.Visible = true;
@@ -224,9 +225,7 @@ namespace ClothesShopManagement.Statistics
 
                     currentDgv = "importbill";
 
-                    //string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
-                    //string imagePath = Path.Combine(projectRoot, "images", "icon-cart.png");
-                    //picB_Section2.Image = Image.FromFile(imagePath);  
+                    picB_Section2.Image = ClothesShopManagement.Properties.Resources.icon_cart;
 
                     labelInfo.Visible = true;
                     dateTimePicker1.Visible = true;
@@ -404,18 +403,24 @@ namespace ClothesShopManagement.Statistics
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && (currentDgv == "bill" || currentDgv == "importbill"))
             {
-
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 int id = Convert.ToInt32(selectedRow.Cells[0].Value);
-                if(currentDgv == "bill")
+
+                // Kiểm tra và mở chi tiết dựa trên giá trị của currentDgv
+                if (currentDgv == "bill")
                 {
                     new ViewingBillDetail(id).ShowDialog();
-                } else if(currentDgv == "importbill")
+                }
+                else if (currentDgv == "importbill")
                 {
                     new ViewingImportBillDetail(id).ShowDialog();
                 }
+            }
+            else
+            {
+                return;
             }
         }
     }
